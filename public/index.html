@@ -206,10 +206,14 @@
           width: 35px;
           height: 35px;
           margin-right: 10px;
+          position: relative;
+          top: -5px;
         }
         
         .menu-navbar-container {
           margin-left: auto;
+          align-items: flex-start;
+          padding-top: 3px;
         }
       }
       
@@ -548,6 +552,14 @@
             
             // Add the theme toggle before the menu icon in the container
             navbarRight.insertBefore(themeToggle, menuIcon);
+            
+            // Adjust container for better mobile positioning
+            if (window.innerWidth <= 480) {
+              navbarRight.style.alignItems = 'flex-start';
+              navbarRight.style.paddingTop = '3px';
+              themeToggle.style.position = 'relative';
+              themeToggle.style.top = '-5px';
+            }
           }
         }, 500); // Small delay to ensure navbar is loaded
         
@@ -702,6 +714,26 @@
       document.addEventListener('DOMContentLoaded', function() {
         // Trigger scroll event to initialize animation
         window.dispatchEvent(new Event('scroll'));
+      });
+      
+      // Adjust theme toggle position on window resize
+      window.addEventListener('resize', function() {
+        const themeToggle = document.getElementById('themeToggle');
+        const navbarRight = document.querySelector('.menu-navbar-container');
+        
+        if (themeToggle && navbarRight) {
+          if (window.innerWidth <= 480) {
+            navbarRight.style.alignItems = 'flex-start';
+            navbarRight.style.paddingTop = '3px';
+            themeToggle.style.position = 'relative';
+            themeToggle.style.top = '-5px';
+          } else {
+            navbarRight.style.alignItems = 'center';
+            navbarRight.style.paddingTop = '0';
+            themeToggle.style.position = 'relative';
+            themeToggle.style.top = '0';
+          }
+        }
       });
     </script>
   </body>
