@@ -1,0 +1,371 @@
+/* 
+ * Responsive.css - Additional responsive fixes and UI enhancements
+ * This file contains overrides and fixes for various screen sizes
+ */
+
+/* Global UI enhancements */
+:root {
+  --card-border-radius: 16px;
+  --button-border-radius: 30px;
+  --hover-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --standard-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --subtle-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --subtle-border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.dark-theme {
+  --subtle-border: 1px solid rgba(255, 255, 255, 0.05);
+  --standard-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  --hover-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Card design enhancements */
+.project-card, 
+.skill-card, 
+.expertise-area, 
+.skill-category,
+.education-item,
+.contact-form,
+.contact-info {
+  border-radius: var(--card-border-radius) !important;
+  overflow: hidden;
+  box-shadow: var(--standard-shadow);
+  transition: var(--hover-transition);
+  border: var(--subtle-border);
+}
+
+.project-card:hover, 
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Button enhancements */
+.btn, 
+button, 
+input[type="submit"] {
+  border-radius: var(--button-border-radius);
+  overflow: hidden;
+  transition: var(--hover-transition);
+}
+
+/* Navigation design improvements */
+.navbar {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark-theme .navbar {
+  background-color: rgba(30, 30, 30, 0.8) !important;
+}
+
+.nav-menu {
+  border-radius: 0 0 0 var(--card-border-radius) !important;
+}
+
+/* Image enhancements */
+.profile-image,
+.project-image img {
+  transition: var(--hover-transition);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* Tech tags */
+.tech-tag, 
+.tech-stack span, 
+.project-tech span {
+  border-radius: 20px;
+  padding: 6px 14px;
+  background: rgba(13, 110, 253, 0.1);
+  color: #0d6efd;
+  font-weight: 500;
+  margin: 4px;
+  display: inline-block;
+  font-size: 0.85rem;
+  box-shadow: var(--subtle-shadow);
+  border: var(--subtle-border);
+}
+
+body.dark-theme .tech-tag,
+body.dark-theme .tech-stack span, 
+body.dark-theme .project-tech span {
+  background: rgba(13, 110, 253, 0.2);
+  color: #90c5ff;
+}
+
+/* Scroll animation text styling */
+.scroll-animate-text {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.scroll-animate-text::before,
+.scroll-animate-text::after {
+  content: "•";
+  display: inline-block;
+  margin: 0 10px;
+  opacity: 0.7;
+}
+
+.moving-name {
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  max-width: 80%;
+  left: 10%;
+  padding: 10px 0;
+  background-color: var(--primary-color);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%);
+  background-size: 10px 10px;
+  color: white;
+  text-align: center;
+  z-index: 99;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, opacity;
+  border-radius: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.moving-name:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Section headers */
+.section-header {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary-color), transparent);
+  border-radius: 3px;
+}
+
+/* Timeline enhancements */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  margin-left: 10px;
+  border-left: 2px solid var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--subtle-shadow);
+  backdrop-filter: blur(5px);
+  border: var(--subtle-border);
+}
+
+body.dark-theme .timeline-item {
+  background: rgba(30, 30, 30, 0.6);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -41px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: 5px solid white;
+  box-shadow: var(--subtle-shadow);
+}
+
+body.dark-theme .timeline-item::before {
+  border-color: #1e1e1e;
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .nav-menu {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Fix overflow issues on smaller screens */
+@media screen and (max-width: 768px) {
+  /* Fix for the background animation shapes */
+  .bg-animation-shape {
+    opacity: 0.4;
+  }
+  
+  /* Fix for the moving text banner on mobile */
+  .moving-text {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+  
+  /* Better touch targets for mobile */
+  button, 
+  .nav-links,
+  .social-links a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Fix for forms on mobile */
+  input, 
+  textarea, 
+  select, 
+  button {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+  
+  .moving-name {
+    max-width: 90%;
+    left: 5%;
+    padding: 8px 0;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .scroll-animate-text {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  
+  .scroll-animate-text::before,
+  .scroll-animate-text::after {
+    margin: 0 5px;
+  }
+  
+  .card-border-radius {
+    --card-border-radius: 12px;
+  }
+}
+
+/* Extremely small screens */
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 10px;
+  }
+  
+  .moving-name {
+    max-width: 95%;
+    left: 2.5%;
+    padding: 6px 0;
+    border-radius: 15px;
+    font-size: 0.85rem;
+  }
+  
+  .scroll-animate-text {
+    padding: 0 5px;
+    font-size: 0.85rem;
+  }
+  
+  .scroll-animate-text::before,
+  .scroll-animate-text::after {
+    margin: 0 3px;
+  }
+  
+  .menu-navbar-container {
+    position: relative;
+    z-index: 1001;
+  }
+  
+  .navbar-logo {
+    font-size: 1.1rem;
+    max-width: 60%;
+  }
+  
+  .hero-section h1 {
+    font-size: 1.6rem;
+  }
+  
+  .hero-section h2 {
+    font-size: 1rem;
+  }
+  
+  .projects-container h1,
+  .about-container h1,
+  .contact-container h1 {
+    font-size: 1.6rem;
+  }
+  
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .project-image {
+    height: 150px;
+  }
+  
+  .interests-list li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix for landscape orientation on mobile */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .nav-menu {
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .hero-section {
+    padding: 30px 15px;
+  }
+  
+  .nav-item {
+    padding: 0.8rem 0;
+  }
+}
+
+/* Fix for tablets in portrait mode */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .project-image {
+    height: 220px;
+  }
+}
+
+/* Fix for high resolution screens */
+@media screen and (min-width: 1400px) {
+  .home-container,
+  .about-container,
+  .projects-container,
+  .contact-container {
+    max-width: 1400px;
+  }
+} 

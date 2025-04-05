@@ -6,11 +6,12 @@ const About = () => {
     <div className="about-container">
       <h1 className="section-header">About Me</h1>
       
-      <div className="about-intro">
+      <div className="about-content">
         <div className="about-image">
           <img 
             src="/images/bhagirathphoto.jpg" 
             alt="Bhagirath Devani" 
+            className="profile-image"
           />
         </div>
         
@@ -81,18 +82,6 @@ const About = () => {
           </div>
           
           <div className="timeline-item">
-            <div className="timeline-date">2023</div>
-            <h3>Google Digital Marketing Certification</h3>
-            <p>Comprehensive training in digital marketing fundamentals, search, display, and video advertising</p>
-          </div>
-          
-          <div className="timeline-item">
-            <div className="timeline-date">2022</div>
-            <h3>Meta React Developer Certification</h3>
-            <p>Advanced React concepts including hooks, context API, and performance optimization</p>
-          </div>
-          
-          <div className="timeline-item">
             <div className="timeline-date">2022</div>
             <h3>HSC (Science Stream)</h3>
             <p>PP swami vidhyabhavan (Jirabaug)</p>
@@ -102,6 +91,18 @@ const About = () => {
             <div className="timeline-date">2018</div>
             <h3>SSC</h3>
             <p>Gajera Vidhyabhavan (Utran)</p>
+          </div>
+          
+          <div className="timeline-item">
+            <div className="timeline-date">2023</div>
+            <h3>Google Digital Marketing Certification</h3>
+            <p>Comprehensive training in digital marketing fundamentals, search, display, and video advertising</p>
+          </div>
+          
+          <div className="timeline-item">
+            <div className="timeline-date">2022</div>
+            <h3>Meta React Developer Certification</h3>
+            <p>Advanced React concepts including hooks, context API, and performance optimization</p>
           </div>
         </div>
       </div>
