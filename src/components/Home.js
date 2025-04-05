@@ -5,6 +5,12 @@ import '../styles/Home.css';
 const Home = () => {
   return (
     <div className="home-container">
+      <div className="tagline-banner">
+        <div className="tagline-content">
+          Transforming Ideas into Reality
+        </div>
+      </div>
+      
       <div className="hero-section fade-in">
         <h1>Bhagirath N. Devani</h1>
         <h2>React Developer & Digital Marketing Strategist</h2>
