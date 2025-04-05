@@ -11,15 +11,6 @@ const Projects = () => {
       image: 'stockproject.jpg',
       link: 'https://stock-xpert-three.vercel.app/',
       github: 'https://github.com/openheimer9/stockxpert'
-    },
-    {
-      id: 2,
-      title: 'Interactive Decision-Making Story App',
-      description: 'Created a single-page application using React to deliver a personalized, decision-driven narrative experience. Implemented a JSON graph structure to represent the branching storyline, allowing users to make choices that directly impact the narrative\'s progression. Designed a responsive and engaging user interface, utilizing React components and state management for seamless user interaction.',
-      technologies: ['React.js', 'JSON', 'State Management', 'UI/UX Design'],
-      image: 'story-app.jpg',
-      link: '#',
-      github: '#'
     }
   ];
 
