@@ -6,45 +6,32 @@ const About = () => {
     <div className="about-container">
       <h1 className="section-header">About Me</h1>
       
-      <div className="about-content" style={{ 
-            display: 'flex', 
-            flexDirection: 'row',
-            alignItems: 'flex-start',
-            gap: '30px',
-            marginBottom: '40px'
-          }}>
-            <div className="about-image">
-              <img 
-                src="/images/bhagirathphoto.jpg" 
-                alt="Bhagirath Devani" 
-                style={{ 
-                  width: '300px', 
-                  height: '300px', 
-                  objectFit: 'cover',
-                  borderRadius: '50%',
-                  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)'
-                }} 
-              />
-            </div>
-            
-            <div className="about-text">
-              <p className="lead">
-                I'm a passionate React Developer and Digital Marketing Specialist with a mission to create digital experiences that make a difference.
-              </p>
-              
-              <p>
-                Currently pursuing my B.Tech in Information Technology at Uka Tarsadia University, I balance my academic pursuits with hands-on project work and continuous learning in the ever-evolving fields of web development and digital marketing.
-              </p>
-              
-              <p>
-                My journey began with a curiosity about how websites work, which led me to explore HTML and CSS. As I delved deeper, I discovered my passion for creating interactive user experiences with JavaScript and React. Alongside my development skills, I've cultivated expertise in digital marketing, recognizing the powerful synergy between well-built applications and effective marketing strategies.
-              </p>
-              
-              <p>
-                What drives me is the opportunity to solve real-world problems through technology. Whether it's creating an intuitive user interface or developing a marketing strategy that connects businesses with their target audience, I approach each project with creativity, analytical thinking, and attention to detail.
-              </p>
-            </div>
-          </div>
+      <div className="about-intro">
+        <div className="about-image">
+          <img 
+            src="/images/bhagirathphoto.jpg" 
+            alt="Bhagirath Devani" 
+          />
+        </div>
+        
+        <div className="about-text">
+          <p className="lead">
+            I'm a passionate React Developer and Digital Marketing Specialist with a mission to create digital experiences that make a difference.
+          </p>
+          
+          <p>
+            Currently pursuing my B.Tech in Information Technology at Uka Tarsadia University, I balance my academic pursuits with hands-on project work and continuous learning in the ever-evolving fields of web development and digital marketing.
+          </p>
+          
+          <p>
+            My journey began with a curiosity about how websites work, which led me to explore HTML and CSS. As I delved deeper, I discovered my passion for creating interactive user experiences with JavaScript and React. Alongside my development skills, I've cultivated expertise in digital marketing, recognizing the powerful synergy between well-built applications and effective marketing strategies.
+          </p>
+          
+          <p>
+            What drives me is the opportunity to solve real-world problems through technology. Whether it's creating an intuitive user interface or developing a marketing strategy that connects businesses with their target audience, I approach each project with creativity, analytical thinking, and attention to detail.
+          </p>
+        </div>
+      </div>
       
       <div className="expertise-section">
         <h2 className="section-header">My Expertise</h2>
