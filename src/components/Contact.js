@@ -3,7 +3,7 @@ import { init, send } from 'emailjs-com';
 import '../styles/Contact.css';
 
 // Initialize EmailJS with your user ID
-init("YOUR_USER_ID"); // Replace with your actual EmailJS User ID
+init("WaPHmQzAcnFiUfJv1");
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -108,8 +108,8 @@ const Contact = () => {
     try {
       // Replace with your actual Email JS service ID and template ID
       await send(
-        'YOUR_SERVICE_ID', // Replace with your Service ID
-        'YOUR_TEMPLATE_ID', // Replace with your Template ID
+        'service_wz9gn5b', // Replace with your Service ID
+        'template_t76557c', // Replace with your Template ID
         {
           from_name: formData.name,
           to_name: 'Bhagirath Devani',
