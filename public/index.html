@@ -74,25 +74,8 @@
         overflow: hidden;
       }
       
-      /* Moving name styling - updated to static */
-      .moving-name {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        padding: 8px 0;
-        background-color: var(--primary-color);
-        color: white;
-        text-align: center;
-        z-index: 99;
-        font-weight: 700;
-        letter-spacing: 2px;
-      }
-      
-      .moving-name-content {
-        display: inline-block;
-        /* Animation removed */
-      }
+      /* Removed the moving-name section as it's now handled by the React component */
+      /* The tagline "Transforming Ideas into Reality" is now part of the Home component */
       
       /* Removed the subtleMove animation keyframes since we don't need it anymore */
       .bg-animation-shape {
@@ -488,14 +471,6 @@
       <div class="bg-animation-shape shape-3"></div>
       <div class="bg-animation-shape shape-4"></div>
       <div class="bg-animation-shape shape-5"></div>
-    </div>
-    
-    <!-- Updated banner with welcome message instead of duplicate name -->
-    <!-- Updated banner with a more engaging headline -->
-    <div class="moving-name">
-      <div class="moving-name-content">
-        Transforming Ideas into Experiences
-      </div>
     </div>
     
     <div class="time-display" id="timeDisplay"></div>
