@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="google-site-verification" content="LWlcoEeKMgg02wtHav8ZrdokDdqnnSPh4dLn18OHiTM" />
     <meta charset="utf-8" />
-    <meta name="google-site-verification" content="wXM1CBxBnZqu5ECquponS-oI52blb9FXULHd-6d7weg" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -34,6 +32,7 @@
         color: var(--dark-text);
         transition: background-color 0.3s ease, color 0.3s ease;
       }
+      
       
       body.dark-theme {
         background-color: var(--dark-bg);
@@ -205,17 +204,17 @@
       
       @media screen and (max-width: 480px) {
         .theme-toggle {
-          width: 35px;
-          height: 35px;
-          margin-right: 10px;
+          width: 32px;
+          height: 32px;
+          margin-right: 5px;
           position: relative;
-          top: -5px;
+          top: 0;
         }
         
         .menu-navbar-container {
           margin-left: auto;
-          align-items: flex-start;
-          padding-top: 3px;
+          align-items: center;
+          padding-top: 0;
         }
       }
       
@@ -528,6 +527,56 @@
     <script>
       // Move theme-toggle to navbar
       document.addEventListener('DOMContentLoaded', function() {
+        // Style the navbar logo for better appearance
+        setTimeout(function() {
+          const navbarLogo = document.querySelector('.navbar-logo');
+          const logoFirst = document.querySelector('.logo-first');
+          const logoLast = document.querySelector('.logo-last');
+          
+          if (navbarLogo) {
+            // Add animation for the gradient
+            navbarLogo.style.transition = 'all 0.5s ease';
+            
+            // Add subtle text shadow animation
+            if (logoFirst && logoLast) {
+              let angle = 0;
+              
+              // Logo animation
+              function animateLogo() {
+                if (!logoFirst || !logoLast) return;
+                
+                // Skip animation if the user prefers reduced motion
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                  return;
+                }
+                
+                angle += 0.02;
+                const shadowBlur = 3 + Math.sin(angle) * 1;
+                const shadowX = 1 + Math.cos(angle) * 0.5;
+                const shadowY = 1 + Math.sin(angle) * 0.5;
+                
+                logoFirst.style.textShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px rgba(0, 0, 0, 0.2)`;
+                logoLast.style.textShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px rgba(0, 0, 0, 0.2)`;
+                
+                requestAnimationFrame(animateLogo);
+              }
+              
+              animateLogo();
+            }
+            
+            // Ensure proper centered position in mobile
+            if (window.innerWidth <= 960) {
+              navbarLogo.style.left = '50%';
+              navbarLogo.style.transform = 'translate(-50%, 0)';
+              navbarLogo.style.height = '60px';
+              navbarLogo.style.display = 'flex';
+              navbarLogo.style.alignItems = 'center';
+              navbarLogo.style.justifyContent = 'center';
+              navbarLogo.style.textAlign = 'center';
+            }
+          }
+        }, 300);
+        
         // Create theme toggle button
         const themeToggle = document.createElement('button');
         themeToggle.className = 'theme-toggle';
@@ -555,12 +604,20 @@
             // Add the theme toggle before the menu icon in the container
             navbarRight.insertBefore(themeToggle, menuIcon);
             
+            // Match the theme toggle size to the menu icon
+            const menuStyle = window.getComputedStyle(menuIcon);
+            themeToggle.style.width = menuStyle.width;
+            themeToggle.style.height = menuStyle.height;
+            themeToggle.style.fontSize = menuStyle.fontSize;
+            
             // Adjust container for better mobile positioning
             if (window.innerWidth <= 480) {
-              navbarRight.style.alignItems = 'flex-start';
-              navbarRight.style.paddingTop = '3px';
+              navbarRight.style.alignItems = 'center';
+              navbarRight.style.paddingTop = '0';
+              navbarRight.style.marginRight = '-5px';
               themeToggle.style.position = 'relative';
-              themeToggle.style.top = '-5px';
+              themeToggle.style.top = '0';
+              themeToggle.style.marginRight = '8px';
             }
           }
         }, 500); // Small delay to ensure navbar is loaded
@@ -721,19 +778,60 @@
       // Adjust theme toggle position on window resize
       window.addEventListener('resize', function() {
         const themeToggle = document.getElementById('themeToggle');
+        const menuIcon = document.querySelector('.menu-icon');
         const navbarRight = document.querySelector('.menu-navbar-container');
+        const navbarLogo = document.querySelector('.navbar-logo');
         
-        if (themeToggle && navbarRight) {
+        if (navbarLogo) {
+          if (window.innerWidth <= 960) {
+            navbarLogo.style.left = '50%';
+            navbarLogo.style.transform = 'translate(-50%, 0)';
+            navbarLogo.style.height = '60px';
+            navbarLogo.style.display = 'flex';
+            navbarLogo.style.alignItems = 'center';
+            navbarLogo.style.justifyContent = 'center';
+            navbarLogo.style.textAlign = 'center';
+          } else {
+            navbarLogo.style.left = '';
+            navbarLogo.style.transform = '';
+            navbarLogo.style.textAlign = '';
+          }
+        }
+        
+        if (themeToggle && navbarRight && menuIcon) {
+          // Make sure both buttons have exactly the same dimensions
           if (window.innerWidth <= 480) {
-            navbarRight.style.alignItems = 'flex-start';
-            navbarRight.style.paddingTop = '3px';
+            // Get the computed styles of menu icon
+            const menuStyle = window.getComputedStyle(menuIcon);
+            
+            // Match theme toggle size exactly to menu icon
+            themeToggle.style.width = menuStyle.width;
+            themeToggle.style.height = menuStyle.height;
+            themeToggle.style.fontSize = menuStyle.fontSize;
+            
+            navbarRight.style.alignItems = 'center';
+            navbarRight.style.paddingTop = '0';
+            navbarRight.style.marginRight = '-5px'; // Adjust for better alignment
+            
             themeToggle.style.position = 'relative';
-            themeToggle.style.top = '-5px';
+            themeToggle.style.top = '0';
+            themeToggle.style.marginRight = '8px';
           } else {
             navbarRight.style.alignItems = 'center';
             navbarRight.style.paddingTop = '0';
+            navbarRight.style.marginRight = '0';
+            
+            // Get the computed styles of menu icon
+            const menuStyle = window.getComputedStyle(menuIcon);
+            
+            // Match theme toggle size exactly to menu icon
+            themeToggle.style.width = menuStyle.width;
+            themeToggle.style.height = menuStyle.height;
+            themeToggle.style.fontSize = menuStyle.fontSize;
+            
             themeToggle.style.position = 'relative';
             themeToggle.style.top = '0';
+            themeToggle.style.marginRight = '15px';
           }
         }
       });
