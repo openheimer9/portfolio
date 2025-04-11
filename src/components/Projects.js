@@ -34,10 +34,10 @@ const Projects = () => {
               <span>RESTful API</span>
             </div>
             <div className="project-links">
-              <a href="https://github.com/yourusername/stock-review-tool" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/openheimer9/stock-review-tool" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-github"></i> View Code
               </a>
-              <a href="https://stock-review-tool.herokuapp.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://stock-xpert-three.vercel.app/" target="_blank" rel="noopener noreferrer">
                 <i className="fas fa-external-link-alt"></i> Live Demo
               </a>
             </div>
