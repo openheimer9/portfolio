@@ -44,35 +44,87 @@ body:not(.dark-theme) .navbar:hover {
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  font-weight: 700;
+  font-weight: 800;
   transition: all 0.3s ease;
   position: relative;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #0d6efd, #6610f2, #0dcaf0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  height: 80px;
+  position: relative;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+.navbar-logo::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background: linear-gradient(to bottom, #0d6efd, #0dcaf0);
+  border-radius: 2px;
+  opacity: 0.8;
 }
 
 body:not(.dark-theme) .navbar-logo {
-  color: #212529;
+  background: linear-gradient(45deg, #0d6efd, #6610f2, #0dcaf0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-logo:hover {
-  color: #0d6efd;
-  text-shadow: 0 0 15px rgba(13, 110, 253, 0.3);
   transform: translateY(-2px);
+  background: linear-gradient(45deg, #0dcaf0, #6610f2, #0d6efd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.2px;
+}
+
+.navbar-logo span {
+  font-weight: 400;
+  opacity: 0.9;
 }
 
 .navbar-logo::after {
   content: '';
   position: absolute;
-  bottom: -5px;
-  left: 0;
+  bottom: 22px;
+  left: 10px;
   width: 0;
   height: 2px;
-  background-color: #0d6efd;
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, #0dcaf0, #0d6efd);
+  transition: width 0.4s ease;
   border-radius: 2px;
 }
 
 .navbar-logo:hover::after {
-  width: 100%;
+  width: calc(100% - 20px);
+}
+
+.navbar-logo .logo-first {
+  font-weight: 800;
+  color: transparent;
+  background: linear-gradient(45deg, #0dcaf0, #6610f2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: relative;
+}
+
+.navbar-logo .logo-last {
+  font-weight: 700;
+  color: transparent;
+  background: linear-gradient(45deg, #6610f2, #0d6efd);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .nav-controls {
@@ -282,34 +334,58 @@ body:not(.dark-theme) .fa-times {
   .navbar-logo {
     position: absolute;
     top: 0;
-    left: 0;
-    transform: translate(20px, 10px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.3rem;
+    text-align: center;
+    width: auto;
   }
 
   .navbar-logo:hover {
-    transform: translate(20px, 8px);
+    transform: translate(-50%, 0);
+  }
+
+  .navbar-logo .logo-first,
+  .navbar-logo .logo-last {
+    display: inline-block;
+  }
+  
+  .navbar-logo::after {
+    bottom: 12px;
   }
 
   .nav-controls {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-20px, 10px);
+    transform: translate(-20px, 12px);
     gap: 15px;
+    display: flex;
+    align-items: center;
   }
 
   .theme-toggle {
     width: 35px;
     height: 35px;
     font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .menu-icon {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 35px;
+    height: 35px;
   }
 
   .menu-icon:hover {
@@ -323,27 +399,34 @@ body:not(.dark-theme) .fa-times {
   }
 
   .navbar-logo {
-    transform: translate(15px, 10px);
+    transform: translate(-50%, 0);
     font-size: 1.2rem;
+    white-space: nowrap;
   }
 
   .navbar-logo:hover {
-    transform: translate(15px, 8px);
+    transform: translate(-50%, 0);
+  }
+
+  .navbar-logo::after {
+    bottom: 12px;
   }
 
   .nav-controls {
-    transform: translate(-15px, 10px);
-    gap: 10px;
+    transform: translate(-15px, 14px);
+    gap: 8px;
   }
 
   .theme-toggle {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     font-size: 1.2rem;
   }
 
   .menu-icon {
-    font-size: 1.3rem;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
   }
 
   .nav-links {

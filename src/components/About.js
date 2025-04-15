@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/About.css';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -50,6 +51,9 @@ const About = () => {
               <li>Clean, well-documented code that's easy to maintain</li>
               <li>Accessibility considerations for inclusive user experiences</li>
             </ul>
+            <Link to="/blog/react-development-2024" className="read-more-link">
+              Read my blog about React Development <i className="fas fa-arrow-right"></i>
+            </Link>
           </div>
           
           <div className="expertise-area">
@@ -65,6 +69,9 @@ const About = () => {
               <li>Analytics and data analysis for continuous improvement</li>
               <li>Content marketing that engages and converts</li>
             </ul>
+            <Link to="/blog/digital-marketing-strategies-2024" className="read-more-link">
+              Read my blog about SEO and Digital Marketing <i className="fas fa-arrow-right"></i>
+            </Link>
           </div>
         </div>
       </div>
@@ -114,7 +121,7 @@ const About = () => {
           <div className="skill-category">
             <h3>Frontend</h3>
             <ul>
-              <li>React.js</li>
+              <li>React.js <Link to="/blog/react-development-2024" className="skill-link"><i className="fas fa-external-link-alt"></i></Link></li>
               <li>JavaScript (ES6+)</li>
               <li>HTML5 & CSS3</li>
               <li>Redux</li>
@@ -138,7 +145,7 @@ const About = () => {
           <div className="skill-category">
             <h3>Digital Marketing</h3>
             <ul>
-              <li>SEO</li>
+              <li>SEO <Link to="/blog/digital-marketing-strategies-2024" className="skill-link"><i className="fas fa-external-link-alt"></i></Link></li>
               <li>Google Ads</li>
               <li>Social Media Marketing</li>
               <li>Content Strategy</li>
@@ -166,7 +173,7 @@ const About = () => {
         <p>When I'm not coding or strategizing marketing campaigns, you can find me:</p>
         <ul className="interests-list">
           <li><i className="fas fa-chess"></i> Playing chess to sharpen my strategic thinking skills</li>
-          <li><i className="fas fa-chart-line"></i> Researching and analyzing stock market trends</li>
+          <li><i className="fas fa-chart-line"></i> Researching and analyzing stock market trends <Link to="/blog/stock-market-analysis-comparison" className="skill-link"><i className="fas fa-external-link-alt"></i></Link></li>
           <li><i className="fas fa-guitar"></i> Playing guitar and enjoying classical music</li>
           <li><i className="fas fa-plane"></i> Traveling and exploring new cultures and destinations</li>
           <li><i className="fas fa-book"></i> Reading tech blogs and books on digital innovation</li>

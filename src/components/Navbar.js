@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          Bhagirath Devani
+          <span className="logo-first">Bhagirath</span>&nbsp;<span className="logo-last">Devani</span>
         </Link>
         <div className="nav-controls">
           <div className="menu-icon" onClick={toggleMenu}>
@@ -34,6 +34,11 @@ const Navbar = () => {
           <li className="nav-item">
             <Link to="/projects" className="nav-links" onClick={toggleMenu}>
               Projects
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/blog" className="nav-links" onClick={toggleMenu}>
+              Blog
             </Link>
           </li>
           <li className="nav-item">

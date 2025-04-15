@@ -19,6 +19,13 @@ const Footer = () => {
               <Link to="/contact">Contact</Link>
             </div>
             <div className="footer-link-items">
+              <h2>Blog</h2>
+              
+              <Link to="/blog/stock-market-analysis-comparison">Stock Market Analysis</Link>
+              <Link to="/blog/digital-marketing-strategies-2024">SEO Guide</Link>
+              <Link to="/blog/react-development-2024">React Development</Link>
+            </div>
+            <div className="footer-link-items">
               <h2>Social Media</h2>
               <a href="https://github.com/openheimer9" target="_blank" rel="noopener noreferrer">
                 GitHub
@@ -40,7 +47,7 @@ const Footer = () => {
             <div className="social-icons">
               <a
                 className="social-icon-link"
-                href="https://github.com/openheimer9"
+                href="https://github.com/bhagirathdevani"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
