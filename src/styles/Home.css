@@ -564,3 +564,127 @@ body.dark-theme .btn-secondary {
     font-size: 1rem;
   }
 }
+
+/* Add these new styles to your existing CSS */
+
+.about-section {
+  padding: 6rem 2rem;
+  background: var(--light-bg);
+  position: relative;
+}
+
+.about-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+  opacity: 0.2;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+
+.about-content h2.section-header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.about-item:hover {
+  transform: translateY(-5px);
+}
+
+.about-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.about-item p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.about-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-item ul li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.about-item ul li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+body.dark-theme .about-item {
+  background: #1e1e1e;
+}
+
+body.dark-theme .about-item h3 {
+  color: var(--primary-color);
+}
+
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-animation.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-section {
+    padding: 4rem 1rem;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-content h2 {
+    font-size: 2rem;
+  }
+}

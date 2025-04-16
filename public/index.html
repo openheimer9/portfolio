@@ -2,12 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="canonical" href="https://bhagirathportfolio.netlify.app/" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Bhagirath Devani - React Developer | Digital Marketing Specialist | Stock Market Analyst"
+      content="Bhagirath Devani - Expert React Developer, Digital Marketing Specialist, and Stock Market Analyst. Specializing in creating high-performance web applications, SEO optimization, and market analysis."
+    />
+    <meta
+      name="keywords"
+      content="React Developer, Web Development, Digital Marketing, SEO Specialist, Stock Market Analysis, Frontend Developer, JavaScript Expert, Portfolio"
     />
     <script type="application/ld+json">
       {
@@ -16,17 +21,36 @@
         "@id": "https://bhagirathdevani.com/#person",
         "name": "Bhagirath Devani",
         "jobTitle": ["React Developer", "Digital Marketing Specialist", "Stock Market Analyst"],
-        "url": "https://bhagirathdevani.com",
+        "url": "https://bhagirathportfolio.netlify.app/",
+        "image": "https://instagram.famd5-3.fna.fbcdn.net/v/t51.2885-19/484922786_1055123276452634_7635365619409579689_n.jpg?_nc_ht=instagram.famd5-3.fna.fbcdn.net&_nc_cat=102&_nc_oc=Q6cZ2QG_MEdW9NuFFv3IMHOaV4mN4BRB3nCb9q-fs3VUCHEHROL4xx1mj1amBcNTxql36Yc&_nc_ohc=OVNJ6uAUCWkQ7kNvwFPcHxc&_nc_gid=OuWEgmLFcrf3xNj6Tv0hlA&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfHtmnzdgGq3WAnb_RAZcqmSYp670cBET0--zO1Iy7xoZg&oe=68050B10&_nc_sid=7a9f4b",
         "sameAs": [
           "https://github.com/openheimer9",
-          "https://linkedin.com/in/bhagirathdevani"
+          "https://linkedin.com/in/bhagirathdevani",
+          
         ],
         "knowsAbout": [
           "React.js",
           "JavaScript",
           "Digital Marketing",
           "Stock Market Analysis",
-          "Web Development"
+          "Web Development",
+          "SEO Optimization",
+          "Frontend Development",
+          "UI/UX Design",
+          "Performance Optimization",
+          "Responsive Web Design"
+        ],
+        "skills": [
+          "React.js",
+          "JavaScript",
+          "TypeScript",
+          "HTML5",
+          "CSS3",
+          "SEO",
+          "Digital Marketing",
+          "Stock Market Analysis",
+          "Web Performance Optimization",
+          "Responsive Design"
         ]
       }
     </script>
@@ -34,12 +58,12 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "@id": "https://bhagirathdevani.com/#website",
-        "url": "https://bhagirathdevani.com",
+        "@id": "https://bhagirathportfolio.netlify.app/",
+        "url": "https://bhagirathportfolio.netlify.app/",
         "name": "Bhagirath Devani Portfolio",
-        "description": "Portfolio website of Bhagirath Devani - React Developer, Digital Marketing Specialist, and Stock Market Analyst",
+        "description": "Portfolio website of Bhagirath Devani - React Developer, Digital Marketing Specialist and Stock Market Analyst",
         "publisher": {
-          "@id": "https://bhagirathdevani.com/#person"
+          "@id": "https://bhagirathportfolio.netlify.app/"
         }
       }
     </script>
@@ -47,8 +71,10 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" 
+          media="print" onload="this.media='all'">
     <style>
+      /* Only include critical styles needed for initial render */
       :root {
         --primary-color: #0d6efd;
         --secondary-color: #6c757d;
@@ -66,7 +92,6 @@
         color: var(--dark-text);
         transition: background-color 0.3s ease, color 0.3s ease;
       }
-      
       
       body.dark-theme {
         background-color: var(--dark-bg);
@@ -241,8 +266,6 @@
           width: 32px;
           height: 32px;
           margin-right: 5px;
-          position: relative;
-          top: 0;
         }
         
         .menu-navbar-container {
@@ -534,11 +557,169 @@
         transform: translateY(-5px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
+
+      .seo-content-section {
+        padding: 4rem 2rem;
+        background: var(--light-bg);
+      }
+
+      .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .expertise-overview {
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .expertise-overview p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .service-item {
+        padding: 2rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+
+      .service-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-item i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .service-item h4 {
+        margin-bottom: 1rem;
+        color: var(--dark-text);
+      }
+
+      .approach-section {
+        margin-top: 4rem;
+        text-align: center;
+      }
+
+      .approach-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .approach-list li {
+        padding: 1rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Dark theme support */
+      body.dark-theme .seo-content-section {
+        background: var(--dark-bg);
+      }
+
+      body.dark-theme .service-item,
+      body.dark-theme .approach-list li {
+        background: #1e1e1e;
+        color: var(--light-text);
+      }
+
+      /* Responsive adjustments */
+      @media screen and (max-width: 768px) {
+        .seo-content-section {
+          padding: 3rem 1rem;
+        }
+        
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .approach-list {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
-    <title>Bhagirath Devani | React Developer</title>
+    
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link rel="preload" href="/styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/styles/main.css"></noscript>
+    
+    <!-- Optimized JavaScript loading -->
+    <script>
+      // Inline small, critical JavaScript
+      document.documentElement.classList.remove('no-js');
+    </script>
+    <script src="/js/main.js" defer></script>
+    
+    <!-- Additional meta tags for SEO -->
+    <meta name="author" content="Bhagirath Devani" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Bhagirath Devani | Web Developer and SEO Specialist" />
+    <meta property="og:description" content="Portfolio website of Bhagirath Devani - Expert React Developer, Digital Marketing Specialist and Stock Market Analyst with proven experience in web development and SEO optimization." />
+    <meta property="og:image" content="https://instagram.famd5-3.fna.fbcdn.net/v/t51.2885-19/484922786_1055123276452634_7635365619409579689_n.jpg?_nc_ht=instagram.famd5-3.fna.fbcdn.net&_nc_cat=102&_nc_oc=Q6cZ2QG_MEdW9NuFFv3IMHOaV4mN4BRB3nCb9q-fs3VUCHEHROL4xx1mj1amBcNTxql36Yc&_nc_ohc=OVNJ6uAUCWkQ7kNvwFPcHxc&_nc_gid=OuWEgmLFcrf3xNj6Tv0hlA&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfHtmnzdgGq3WAnb_RAZcqmSYp670cBET0--zO1Iy7xoZg&oe=68050B10&_nc_sid=7a9f4b" />
+    <meta property="og:url" content="https://bhagirathportfolio.netlify.app/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bhagirath Devani | Web Developer and SEO Specialist" />
+    <meta name="twitter:description" content="Portfolio website of Bhagirath Devani - Expert React Developer, Digital Marketing Specialist and Stock Market Analyst" />
+    
+    <title>Bhagirath Devani | Web Developer and SEO Specialist</title>
   </head>
-  <body>
+  <body class="no-js">
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- Add this SEO-friendly content before the root div -->
+    <div class="seo-content" style="display: none;">
+      <h1>Bhagirath Devani - React Developer & Digital Marketing Specialist</h1>
+      <p>
+        Welcome to my portfolio. I specialize in React development, digital marketing, and stock market analysis. 
+        With expertise in creating responsive web applications and implementing effective digital marketing strategies, 
+        I help businesses establish a strong online presence.
+      </p>
+      
+      <h2>Services & Expertise</h2>
+      <ul>
+        <li>Custom React.js Application Development</li>
+        <li>Web Performance Optimization</li>
+        <li>Digital Marketing & SEO</li>
+        <li>Stock Market Analysis</li>
+      </ul>
+      
+      <h2>Technical Skills</h2>
+      <ul>
+        <li>React.js & Redux</li>
+        <li>JavaScript (ES6+)</li>
+        <li>TypeScript</li>
+        <li>HTML5 & CSS3</li>
+        <li>SEO Optimization</li>
+        <li>Digital Marketing</li>
+      </ul>
+      
+      <h2>Professional Experience</h2>
+      <p>
+        Experienced in delivering high-quality web solutions and digital marketing strategies 
+        for businesses across various industries. Specializing in creating performant React 
+        applications and implementing effective SEO strategies.
+      </p>
+    </div>
+
     <div class="bg-animation">
       <div class="bg-animation-shape shape-1"></div>
       <div class="bg-animation-shape shape-2"></div>
@@ -547,7 +728,6 @@
       <div class="bg-animation-shape shape-5"></div>
     </div>
     
-    <!-- Updated banner with a more engaging headline -->
     <div class="moving-name">
       <div class="scroll-animate-text">
         Transforming Ideas into Experiences
@@ -556,319 +736,249 @@
     
     <div class="time-display" id="timeDisplay"></div>
     
-    <div id="root"></div>
-    
-    <script>
-      // Move theme-toggle to navbar
-      document.addEventListener('DOMContentLoaded', function() {
-        // Style the navbar logo for better appearance
-        setTimeout(function() {
-          const navbarLogo = document.querySelector('.navbar-logo');
-          const logoFirst = document.querySelector('.logo-first');
-          const logoLast = document.querySelector('.logo-last');
-          
-          if (navbarLogo) {
-            // Add animation for the gradient
-            navbarLogo.style.transition = 'all 0.5s ease';
+    <div id="root">
+      <main itemScope itemType="http://schema.org/Person">
+        {/* Add this section after your moving banner and before your main content */}
+        <section className="seo-content">
+          <div className="content-wrapper" style={{maxWidth: "1200px", margin: "0 auto", padding: "40px 20px"}}>
+            <h1 style={{fontSize: "2.5rem", marginBottom: "20px"}}>
+              React Developer & Digital Marketing Specialist
+            </h1>
             
-            // Add subtle text shadow animation
-            if (logoFirst && logoLast) {
-              let angle = 0;
-              
-              // Logo animation
-              function animateLogo() {
-                if (!logoFirst || !logoLast) return;
-                
-                // Skip animation if the user prefers reduced motion
-                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                  return;
-                }
-                
-                angle += 0.02;
-                const shadowBlur = 3 + Math.sin(angle) * 1;
-                const shadowX = 1 + Math.cos(angle) * 0.5;
-                const shadowY = 1 + Math.sin(angle) * 0.5;
-                
-                logoFirst.style.textShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px rgba(0, 0, 0, 0.2)`;
-                logoLast.style.textShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px rgba(0, 0, 0, 0.2)`;
-                
-                requestAnimationFrame(animateLogo);
-              }
-              
-              animateLogo();
-            }
-            
-            // Ensure proper centered position in mobile
-            if (window.innerWidth <= 960) {
-              navbarLogo.style.left = '50%';
-              navbarLogo.style.transform = 'translate(-50%, 0)';
-              navbarLogo.style.height = '60px';
-              navbarLogo.style.display = 'flex';
-              navbarLogo.style.alignItems = 'center';
-              navbarLogo.style.justifyContent = 'center';
-              navbarLogo.style.textAlign = 'center';
-            }
-          }
-        }, 300);
-        
-        // Create theme toggle button
-        const themeToggle = document.createElement('button');
-        themeToggle.className = 'theme-toggle';
-        themeToggle.id = 'themeToggle';
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        
-        // Add to navbar, next to the menu icon
-        setTimeout(function() {
-          const menuIcon = document.querySelector('.menu-icon');
-          if (menuIcon) {
-            // Create a container for both buttons if it doesn't exist
-            const parent = menuIcon.parentNode;
-            
-            // Check if container exists, otherwise create it
-            let navbarRight = parent.querySelector('.menu-navbar-container');
-            if (!navbarRight) {
-              navbarRight = document.createElement('div');
-              navbarRight.className = 'menu-navbar-container';
-              
-              // Move the menu icon into this container
-              parent.insertBefore(navbarRight, menuIcon);
-              navbarRight.appendChild(menuIcon);
-            }
-            
-            // Add the theme toggle before the menu icon in the container
-            navbarRight.insertBefore(themeToggle, menuIcon);
-            
-            // Match the theme toggle size to the menu icon
-            const menuStyle = window.getComputedStyle(menuIcon);
-            themeToggle.style.width = menuStyle.width;
-            themeToggle.style.height = menuStyle.height;
-            themeToggle.style.fontSize = menuStyle.fontSize;
-            
-            // Adjust container for better mobile positioning
-            if (window.innerWidth <= 480) {
-              navbarRight.style.alignItems = 'center';
-              navbarRight.style.paddingTop = '0';
-              navbarRight.style.marginRight = '-5px';
-              themeToggle.style.position = 'relative';
-              themeToggle.style.top = '0';
-              themeToggle.style.marginRight = '8px';
-            }
-          }
-        }, 500); // Small delay to ensure navbar is loaded
-        
-        // Theme toggle functionality
-        setTimeout(function() {
-          const themeToggle = document.getElementById('themeToggle');
-          if (themeToggle) {
-            const icon = themeToggle.querySelector('i');
-            
-            // Check for saved theme preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-              document.body.classList.add('dark-theme');
-              icon.classList.remove('fa-moon');
-              icon.classList.add('fa-sun');
-            }
-            
-            themeToggle.addEventListener('click', () => {
-              document.body.classList.toggle('dark-theme');
-              
-              if (document.body.classList.contains('dark-theme')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'dark');
-              } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'light');
-              }
-            });
-          }
-        }, 600);
-      });
-      
-      // Time display functionality
-      const timeDisplay = document.getElementById('timeDisplay');
-      
-      function updateTime() {
-        const now = new Date();
-        const options = { 
-          hour: '2-digit', 
-          minute: '2-digit', 
-          second: '2-digit',
-          hour12: true,
-          weekday: 'short',
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric'
-        };
-        timeDisplay.textContent = now.toLocaleString('en-US', options);
-      }
-      
-      updateTime();
-      setInterval(updateTime, 1000);
-      
-      // Check if current page is home page and show/hide banner accordingly
-      function updateBannerVisibility() {
-        const movingName = document.querySelector('.moving-name');
-        if (!movingName) return;
-        
-        // Check if we're on the home page (either '/' or '/index.html')
-        const isHomePage = window.location.pathname === '/' || 
-                          window.location.pathname === '/index.html' ||
-                          window.location.pathname.endsWith('/bhagirathportfolio/');
-        
-        // Show/hide banner based on page
-        if (isHomePage) {
-          movingName.style.display = 'block';
-        } else {
-          movingName.style.display = 'none';
-        }
-      }
-      
-      // Update on page load
-      document.addEventListener('DOMContentLoaded', function() {
-        updateBannerVisibility();
-      });
-      
-      // Update on route change (for React SPA)
-      window.addEventListener('popstate', function() {
-        updateBannerVisibility();
-      });
-      
-      // Listen for React router changes
-      const originalPushState = history.pushState;
-      history.pushState = function() {
-        originalPushState.apply(this, arguments);
-        updateBannerVisibility();
-      };
-      
-      // Scroll animation for the text and blue bar
-      window.addEventListener('scroll', function() {
-        const movingName = document.querySelector('.moving-name');
-        const scrollText = document.querySelector('.scroll-animate-text');
-        
-        if (!movingName || !scrollText) return;
-        
-        // Don't animate if banner is hidden
-        if (movingName.style.display === 'none') return;
-        
-        const scrollPosition = window.scrollY;
-        
-        // Move both the bar and text together
-        if (scrollPosition > 0) {
-          // Hide the banner when scrolling down
-          const translateY = -Math.min(scrollPosition, 80);
-          movingName.style.transform = `translateY(${translateY}px)`;
-          
-          // Make it disappear after moving up 80px
-          if (Math.abs(translateY) >= 80) {
-            movingName.style.opacity = '0';
-          } else {
-            // Gradually fade out
-            const opacityValue = 1 - (Math.abs(translateY) / 80);
-            movingName.style.opacity = opacityValue.toString();
-            
-            // Add subtle floating effect to text if not on a low-end device
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-              scrollText.style.transform = `translateY(${Math.sin(scrollPosition * 0.05) * 3}px)`;
-            }
-          }
-        } else {
-          // Show when at the top
-          movingName.style.transform = 'translateY(0)';
-          movingName.style.opacity = '1';
-          scrollText.style.transform = 'translateY(0)';
-        }
-      }, { passive: true });
-      
-      // Subtle animation for the text
-      function animateText() {
-        const scrollText = document.querySelector('.scroll-animate-text');
-        if (!scrollText) return;
-        
-        // Skip animation if the user prefers reduced motion
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          return;
-        }
-        
-        if (window.scrollY === 0) {
-          let time = Date.now() * 0.001;
-          // Gentle floating animation when at the top
-          scrollText.style.transform = `translateY(${Math.sin(time * 2) * 3}px)`;
-        }
-        
-        requestAnimationFrame(animateText);
-      }
-      
-      animateText();
-      
-      // Initialize the animation on page load
-      document.addEventListener('DOMContentLoaded', function() {
-        // Trigger scroll event to initialize animation
-        window.dispatchEvent(new Event('scroll'));
-      });
-      
-      // Adjust theme toggle position on window resize
-      window.addEventListener('resize', function() {
-        const themeToggle = document.getElementById('themeToggle');
-        const menuIcon = document.querySelector('.menu-icon');
-        const navbarRight = document.querySelector('.menu-navbar-container');
-        const navbarLogo = document.querySelector('.navbar-logo');
-        
-        if (navbarLogo) {
-          if (window.innerWidth <= 960) {
-            navbarLogo.style.left = '50%';
-            navbarLogo.style.transform = 'translate(-50%, 0)';
-            navbarLogo.style.height = '60px';
-            navbarLogo.style.display = 'flex';
-            navbarLogo.style.alignItems = 'center';
-            navbarLogo.style.justifyContent = 'center';
-            navbarLogo.style.textAlign = 'center';
-          } else {
-            navbarLogo.style.left = '';
-            navbarLogo.style.transform = '';
-            navbarLogo.style.textAlign = '';
-          }
-        }
-        
-        if (themeToggle && navbarRight && menuIcon) {
-          // Make sure both buttons have exactly the same dimensions
-          if (window.innerWidth <= 480) {
-            // Get the computed styles of menu icon
-            const menuStyle = window.getComputedStyle(menuIcon);
-            
-            // Match theme toggle size exactly to menu icon
-            themeToggle.style.width = menuStyle.width;
-            themeToggle.style.height = menuStyle.height;
-            themeToggle.style.fontSize = menuStyle.fontSize;
-            
-            navbarRight.style.alignItems = 'center';
-            navbarRight.style.paddingTop = '0';
-            navbarRight.style.marginRight = '-5px'; // Adjust for better alignment
-            
-            themeToggle.style.position = 'relative';
-            themeToggle.style.top = '0';
-            themeToggle.style.marginRight = '8px';
-          } else {
-            navbarRight.style.alignItems = 'center';
-            navbarRight.style.paddingTop = '0';
-            navbarRight.style.marginRight = '0';
-            
-            // Get the computed styles of menu icon
-            const menuStyle = window.getComputedStyle(menuIcon);
-            
-            // Match theme toggle size exactly to menu icon
-            themeToggle.style.width = menuStyle.width;
-            themeToggle.style.height = menuStyle.height;
-            themeToggle.style.fontSize = menuStyle.fontSize;
-            
-            themeToggle.style.position = 'relative';
-            themeToggle.style.top = '0';
-            themeToggle.style.marginRight = '15px';
-          }
-        }
-      });
-    </script>
+            <div className="intro-text" style={{marginBottom: "30px", lineHeight: "1.8"}}>
+              <p>
+                Welcome to my portfolio! I'm Bhagirath Devani, a passionate React Developer and Digital Marketing Specialist based in India. With expertise in creating responsive web applications and implementing effective digital marketing strategies, I help businesses establish a strong online presence and achieve their digital goals.
+              </p>
+            </div>
+
+            <div className="expertise-summary" style={{marginBottom: "30px"}}>
+              <h2 style={{fontSize: "2rem", marginBottom: "15px"}}>
+                Expertise & Services
+              </h2>
+              <p>
+                Specializing in modern web development technologies and digital marketing solutions, I offer:
+              </p>
+              <ul style={{listStyle: "none", padding: "20px 0"}}>
+                <li>✓ Custom React.js application development and optimization</li>
+                <li>✓ Responsive web design and mobile-first development</li>
+                <li>✓ SEO optimization and digital marketing strategies</li>
+                <li>✓ Professional stock market analysis and consulting</li>
+              </ul>
+            </div>
+
+            <div className="why-choose" style={{marginBottom: "30px"}}>
+              <h2 style={{fontSize: "2rem", marginBottom: "15px"}}>
+                Why Work With Me?
+              </h2>
+              <p>
+                My approach combines technical expertise with marketing insight to deliver solutions that not only look great but also perform exceptionally. Every project benefits from:
+              </p>
+              <ul style={{listStyle: "none", padding: "20px 0"}}>
+                <li>• Modern development practices and clean code architecture</li>
+                <li>• Performance-optimized applications and websites</li>
+                <li>• Data-driven digital marketing strategies</li>
+                <li>• Comprehensive market analysis and insights</li>
+              </ul>
+            </div>
+
+            <div className="tech-stack" style={{marginBottom: "30px"}}>
+              <h2 style={{fontSize: "2rem", marginBottom: "15px"}}>
+                Technology Stack
+              </h2>
+              <p>
+                Leveraging cutting-edge technologies and frameworks including:
+              </p>
+              <div style={{display: "flex", flexWrap: "wrap", gap: "10px", padding: "20px 0"}}>
+                <span style={{padding: "5px 15px", background: "var(--primary-color)", color: "white", borderRadius: "20px"}}>React.js</span>
+                <span style={{padding: "5px 15px", background: "var(--primary-color)", color: "white", borderRadius: "20px"}}>JavaScript</span>
+                <span style={{padding: "5px 15px", background: "var(--primary-color)", color: "white", borderRadius: "20px"}}>TypeScript</span>
+                <span style={{padding: "5px 15px", background: "var(--primary-color)", color: "white", borderRadius: "20px"}}>HTML5</span>
+                <span style={{padding: "5px 15px", background: "var(--primary-color)", color: "white", borderRadius: "20px"}}>CSS3</span>
+                <span style={{padding: "5px 15px", background: "var(--primary-color)", color: "white", borderRadius: "20px"}}>Redux</span>
+              </div>
+            </div>
+
+            <div className="industries-served" style={{marginBottom: "30px"}}>
+              <h2 style={{fontSize: "2rem", marginBottom: "15px"}}>
+                Industries Served
+              </h2>
+              <p>
+                Providing expert solutions across various sectors including:
+              </p>
+              <ul style={{listStyle: "none", padding: "20px 0"}}>
+                <li>🏢 E-commerce and Retail</li>
+                <li>💼 Financial Services</li>
+                <li>🎓 Education Technology</li>
+                <li>🏥 Healthcare and Wellness</li>
+              </ul>
+            </div>
+
+            <div className="commitment" style={{marginBottom: "30px"}}>
+              <h2 style={{fontSize: "2rem", marginBottom: "15px"}}>
+                My Commitment
+              </h2>
+              <p>
+                I am committed to delivering high-quality, scalable solutions that help businesses thrive in the digital landscape. Whether you need a custom React application, digital marketing expertise, or stock market insights, I'm here to help you achieve your goals.
+              </p>
+            </div>
+
+            <div className="call-to-action" style={{textAlign: "center", padding: "30px 0"}}>
+              <h2 style={{fontSize: "2rem", marginBottom: "15px"}}>
+                Ready to Start Your Project?
+              </h2>
+              <p style={{marginBottom: "20px"}}>
+                Let's collaborate to create something amazing for your business. Contact me today to discuss your project requirements.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Hero Section */}
+        <section className="hero-section">
+          <h1 itemProp="name">Bhagirath Devani</h1>
+          <p itemProp="description" className="lead">
+            Experienced React Developer & Digital Marketing Specialist with expertise in creating high-performance web applications and implementing effective SEO strategies.
+          </p>
+        </section>
+
+        {/* Add this after the hero-section div and before the skills-section */}
+        <div className="seo-content-section fade-in">
+          <div className="content-wrapper">
+            <div className="expertise-overview">
+              <h2 className="section-header scroll-animation">Full-Stack Development & Digital Marketing</h2>
+              <p className="scroll-animation">
+                As a seasoned React Developer and Digital Marketing Specialist, I bring a unique blend of technical expertise and marketing acumen to every project. My approach focuses on creating high-performance web applications that not only deliver exceptional user experiences but also drive measurable business results.
+              </p>
+            </div>
+
+            <div className="services-overview scroll-animation">
+              <h3>Comprehensive Solutions</h3>
+              <div className="services-grid">
+                <div className="service-item">
+                  <i className="fas fa-code"></i>
+                  <h4>Custom React Development</h4>
+                  <p>Building scalable, responsive web applications with modern React.js practices and optimal performance.</p>
+                </div>
+                <div className="service-item">
+                  <i className="fas fa-search"></i>
+                  <h4>SEO Optimization</h4>
+                  <p>Implementing proven SEO strategies to improve visibility and drive organic traffic to your website.</p>
+                </div>
+                <div className="service-item">
+                  <i className="fas fa-chart-line"></i>
+                  <h4>Market Analysis</h4>
+                  <p>Providing in-depth stock market analysis and investment strategies based on technical and fundamental research.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="approach-section scroll-animation">
+              <h3>My Approach</h3>
+              <ul className="approach-list">
+                <li>✓ User-centric design and development</li>
+                <li>✓ Performance-optimized applications</li>
+                <li>✓ Data-driven marketing strategies</li>
+                <li>✓ Continuous improvement and optimization</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Expertise Section */}
+        <section className="expertise-section">
+          <h2>Areas of Expertise</h2>
+          <div className="expertise-grid">
+            <article className="expertise-card">
+              <h3>React Development</h3>
+              <p>Building scalable and performant web applications using React.js and modern JavaScript.</p>
+            </article>
+            <article className="expertise-card">
+              <h3>Digital Marketing</h3>
+              <p>Implementing comprehensive digital marketing strategies to drive growth and engagement.</p>
+            </article>
+            <article className="expertise-card">
+              <h3>Stock Market Analysis</h3>
+              <p>Providing detailed market analysis and investment strategies based on technical and fundamental research.</p>
+            </article>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="services-section">
+          <h2>Services Offered</h2>
+          <div className="services-grid">
+            <article className="service-card">
+              <h3>Web Development</h3>
+              <ul>
+                <li>Custom React Applications</li>
+                <li>Performance Optimization</li>
+                <li>Responsive Design</li>
+                <li>Progressive Web Apps</li>
+              </ul>
+            </article>
+            <article className="service-card">
+              <h3>Digital Marketing</h3>
+              <ul>
+                <li>SEO Optimization</li>
+                <li>Content Strategy</li>
+                <li>Social Media Marketing</li>
+                <li>Analytics & Reporting</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        {/* Blog Section */}
+        <section className="blog-section">
+          <h2>Latest Insights</h2>
+          <div className="blog-grid">
+            <article className="blog-post">
+              <h3>React Performance Optimization Tips</h3>
+              <p>Learn about the latest techniques for optimizing React applications...</p>
+            </article>
+            <article className="blog-post">
+              <h3>SEO Strategies for 2024</h3>
+              <p>Discover the most effective SEO strategies for improving visibility...</p>
+            </article>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="testimonials-section">
+          <h2>Client Testimonials</h2>
+          <div className="testimonials-grid">
+            <blockquote className="testimonial">
+              <p>Working with Bhagirath was an excellent experience. His expertise in React and SEO helped our project succeed.</p>
+              <cite>- John Doe, CEO at TechCorp</cite>
+            </blockquote>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-grid">
+            <article className="faq-item">
+              <h3>What technologies do you specialize in?</h3>
+              <p>I specialize in React.js, JavaScript, TypeScript, and modern frontend development tools...</p>
+            </article>
+            <article className="faq-item">
+              <h3>How can I improve my website's SEO?</h3>
+              <p>I offer comprehensive SEO audits and optimization strategies...</p>
+            </article>
+            {/* Add more FAQ items */}
+          </div>
+        </section>
+
+        <section className="contact-section" itemScope itemType="http://schema.org/ContactPoint">
+          <h2>Get in Touch</h2>
+          <div className="contact-info">
+            <p itemProp="email">Email: contact@bhagirathdevani.com</p>
+            <p itemProp="telephone">Phone: [Your Phone Number]</p>
+            <p itemProp="location">Location: [Your Location]</p>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

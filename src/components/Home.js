@@ -122,6 +122,56 @@ const Home = () => {
         </div>
       </div>
       
+      <div className="about-section fade-in">
+        <div className="about-content">
+          <h2 className="section-header">Comprehensive Services & Expertise</h2>
+          <div className="about-grid">
+            <div className="about-item scroll-animation">
+              <h3>React Development</h3>
+              <p>
+                Delivering modern, high-performance web applications using React.js. 
+                My development expertise includes:
+              </p>
+              <ul>
+                <li>Custom React application development</li>
+                <li>Performance optimization</li>
+                <li>Responsive design implementation</li>
+                <li>State management with Redux</li>
+                <li>RESTful API integration</li>
+              </ul>
+            </div>
+
+            <div className="about-item scroll-animation">
+              <h3>Digital Marketing</h3>
+              <p>
+                Creating comprehensive digital marketing strategies for enhanced online presence:
+              </p>
+              <ul>
+                <li>Search Engine Optimization (SEO)</li>
+                <li>Content Marketing Strategy</li>
+                <li>Social Media Marketing</li>
+                <li>Google Analytics Implementation</li>
+                <li>Conversion Rate Optimization</li>
+              </ul>
+            </div>
+
+            <div className="about-item scroll-animation">
+              <h3>Stock Market Analysis</h3>
+              <p>
+                Offering expert market analysis and investment strategies:
+              </p>
+              <ul>
+                <li>Technical Analysis</li>
+                <li>Fundamental Research</li>
+                <li>Market Trend Analysis</li>
+                <li>Risk Management</li>
+                <li>Portfolio Optimization</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <div className="contact-cta">
         <h2 className="section-header scroll-animation">Ready to Start Your Project?</h2>
         <p className="scroll-animation">Let's discuss how I can help bring your ideas to life with cutting-edge development and effective digital marketing strategies.</p>
