@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="https://bhagirathportfolio.netlify.app/blog" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Blog - Bhagirath Devani's insights on React Development, Digital Marketing, and Stock Market Analysis. Expert tips and strategies for web development and digital success."
+    />
+    <meta
+      name="keywords"
+      content="React Blog, Web Development Tips, Digital Marketing Insights, SEO Strategies, Stock Market Analysis Blog, Frontend Development Blog"
+    />
+    <title>Blog | Bhagirath Devani - React Developer & Digital Marketing Specialist</title>
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Blog | Bhagirath Devani - Web Developer and SEO Specialist" />
+    <meta property="og:description" content="Expert insights on React development, digital marketing strategies, and stock market analysis from Bhagirath Devani." />
+    <meta property="og:url" content="https://bhagirathportfolio.netlify.app/blog" />
+    <meta property="og:type" content="blog" />
+    
+    <!-- Link to main stylesheet -->
+    <link rel="stylesheet" href="/styles/main.css">
+    
+    <!-- Reuse the same style definitions from index.html -->
+    <style>
+      /* Copy the style definitions from index.html */
+      /* Only include critical styles needed for initial render */
+      :root {
+        --primary-color: #0d6efd;
+        --secondary-color: #6c757d;
+        --light-bg: #f8f9fa;
+        --dark-bg: #121212;
+        --light-text: #f8f9fa;
+        --dark-text: #333;
+      }
+      
+      body {
+        overflow-x: hidden;
+        background-color: var(--light-bg);
+        color: var(--dark-text);
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+      }
+      
+      .blog-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      
+      .blog-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+      
+      .blog-post {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .blog-post:hover {
+        transform: translateY(-5px);
+      }
+      
+      .blog-post h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+      
+      .blog-post-meta {
+        font-size: 0.9rem;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+      }
+      
+      .blog-post-excerpt {
+        margin-bottom: 1rem;
+      }
+      
+      .read-more {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      
+      .read-more:hover {
+        text-decoration: underline;
+      }
+      
+      @media (max-width: 768px) {
+        .blog-container {
+          padding: 1rem;
+        }
+        
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blog-container">
+      <header class="blog-header">
+        <h1>Latest Insights & Articles</h1>
+        <p>Expert perspectives on React development, digital marketing, and market analysis</p>
+      </header>
+      
+      <main class="blog-grid">
+        <article class="blog-post">
+          <h3>React Performance Optimization Tips</h3>
+          <div class="blog-post-meta">
+            <span>Published: March 15, 2024</span>
+            <span>Category: React Development</span>
+          </div>
+          <div class="blog-post-excerpt">
+            <p>Learn about the latest techniques for optimizing React applications, including code splitting, lazy loading, and performance monitoring. Discover how to improve your app's speed and user experience.</p>
+          </div>
+          <a href="#" class="read-more">Read More →</a>
+        </article>
+        
+        <article class="blog-post">
+          <h3>SEO Strategies for 2024</h3>
+          <div class="blog-post-meta">
+            <span>Published: March 10, 2024</span>
+            <span>Category: Digital Marketing</span>
+          </div>
+          <div class="blog-post-excerpt">
+            <p>Discover the most effective SEO strategies for improving visibility in 2024. Learn about the latest algorithm updates, content optimization techniques, and ranking factors.</p>
+          </div>
+          <a href="#" class="read-more">Read More →</a>
+        </article>
+        
+        <article class="blog-post">
+          <h3>Market Analysis Fundamentals</h3>
+          <div class="blog-post-meta">
+            <span>Published: March 5, 2024</span>
+            <span>Category: Stock Market</span>
+          </div>
+          <div class="blog-post-excerpt">
+            <p>Understanding the basics of market analysis is crucial for making informed investment decisions. Learn about technical analysis, fundamental analysis, and market indicators.</p>
+          </div>
+          <a href="#" class="read-more">Read More →</a>
+        </article>
+      </main>
+    </div>
+    
+    <script>
+      // Add dark mode toggle functionality if needed
+      const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (isDarkMode) {
+        document.body.classList.add('dark-theme');
+      }
+    </script>
+  </body>
+</html> 
