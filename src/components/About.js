@@ -121,7 +121,7 @@ const About = () => {
           <div className="skill-category">
             <h3>Frontend</h3>
             <ul>
-              <li>React.js <Link to="/blog/react-development-2024" className="skill-link"><i className="fas fa-external-link-alt"></i></Link></li>
+              <li>React.js <Link to="/blog/developers-perspective-on-react" className="skill-link"><i className="fas fa-external-link-alt"></i></Link></li>
               <li>JavaScript (ES6+)</li>
               <li>HTML5 & CSS3</li>
               <li>Redux</li>

@@ -23,7 +23,7 @@ const Footer = () => {
               
               <Link to="/blog/stock-market-analysis-comparison">Stock Market Analysis</Link>
               <Link to="/blog/digital-marketing-strategies-2024">SEO Guide</Link>
-              <Link to="/blog/react-development-2024">React Development</Link>
+              <Link to="/blog/developers-perspective-on-react">React Development</Link>
             </div>
             <div className="footer-link-items">
               <h2>Social Media</h2>
