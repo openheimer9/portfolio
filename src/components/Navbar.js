@@ -6,45 +6,47 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
+    console.log('Toggle menu clicked, current state:', isOpen);
     setIsOpen(!isOpen);
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
+        {/* Logo in center */}
         <Link to="/" className="navbar-logo">
           <span className="logo-first">Bhagirath</span>&nbsp;<span className="logo-last">Devani</span>
         </Link>
-        <div className="nav-controls">
-          <div className="menu-icon" onClick={toggleMenu}>
-            <i className={isOpen ? 'fas fa-times' : 'fas fa-bars'} />
-          </div>
+
+        {/* Menu icon */}
+        <div className="menu-icon" onClick={toggleMenu}>
+          {isOpen ? (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            </svg>
+          )}
         </div>
+
+        {/* Nav links */}
         <ul className={isOpen ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={toggleMenu}>
-              Home
-            </Link>
+            <Link to="/" className="nav-links" onClick={toggleMenu}>Home</Link>
           </li>
           <li className="nav-item">
-            <Link to="/about" className="nav-links" onClick={toggleMenu}>
-              About
-            </Link>
+            <Link to="/about" className="nav-links" onClick={toggleMenu}>About</Link>
           </li>
           <li className="nav-item">
-            <Link to="/projects" className="nav-links" onClick={toggleMenu}>
-              Projects
-            </Link>
+            <Link to="/projects" className="nav-links" onClick={toggleMenu}>Projects</Link>
           </li>
           <li className="nav-item">
-            <Link to="/blog" className="nav-links" onClick={toggleMenu}>
-              Blog
-            </Link>
+            <Link to="/blog" className="nav-links" onClick={toggleMenu}>Blog</Link>
           </li>
           <li className="nav-item">
-            <Link to="/contact" className="nav-links" onClick={toggleMenu}>
-              Contact
-            </Link>
+            <Link to="/contact" className="nav-links" onClick={toggleMenu}>Contact</Link>
           </li>
         </ul>
       </div>

@@ -4,15 +4,47 @@ import '../styles/Projects.css';
 const Projects = () => {
   return (
     <div className="projects-container">
-      <h1>My Projects</h1>
+      <h1 className="rgb-text">My Projects</h1>
       <div className="projects-grid">
+        {/* Excel Analysis Web Application Project */}
+        <div className="project-card">
+          <div className="project-image">
+            <img src="/images/excel-analysis.png" alt="Excel Analysis Web App" />
+          </div>
+          <div className="project-content">
+            <h3 className="project-title">Excel Analysis Web App</h3>
+            <p>
+              Built a MERN stack web app to upload, analyze, and manage Excel files with secure user authentication (JWT). 
+              Designed a user-friendly frontend with React and Tailwind CSS, including file history tracking and real-time analysis views. 
+              Developed admin panel for managing users and files, with optional AI-based chat support for querying file content. 
+              Handled file uploads, storage, and processing using Express, MongoDB, and optional cloud storage integration.
+            </p>
+            <div className="tech-stack">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>MongoDB</span>
+              <span>JWT</span>
+              <span>Tailwind CSS</span>
+            </div>
+            <div className="project-links">
+              <a href="https://github.com/openheimer9/excel-analysis" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-github"></i> View Code
+              </a>
+              <a href="https://excel-analysis-five.vercel.app" target="_blank" rel="noopener noreferrer">
+                <i className="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+        
         {/* Stock Review Tool Project */}
         <div className="project-card">
           <div className="project-image">
             <img src="/images/stockproject.png" alt="StockXpert" />
           </div>
           <div className="project-content">
-            <h3>StockXpert</h3>
+            <h3 className="project-title">StockXpert</h3>
             <p>
               StockXpert is an advanced stock analysis platform that provides real-time stock data and market analytics. The project follows a client-server architecture with a React-based frontend web application featuring a modern UI and a Node.js/Express backend server that interfaces with Yahoo Finance API. Key features include real-time stock data retrieval for specific symbols, market overview showing major indices (S&P 500, NASDAQ, DOW), detailed financial metrics for stocks (PE ratios, margins, dividends, etc.), and responsive design that works on both desktop and mobile. The application fetches data from Yahoo Finance API and presents it through an intuitive interface, designed for investors and traders who need comprehensive stock information and market analysis in one place.
             </p>

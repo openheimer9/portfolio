@@ -119,51 +119,77 @@ const About = () => {
         
         <div className="skills-grid">
           <div className="skill-category">
-            <h3>Frontend</h3>
-            <ul>
-              <li>React.js <Link to="/blog/developers-perspective-on-react" className="skill-link"><i className="fas fa-external-link-alt"></i></Link></li>
-              <li>JavaScript (ES6+)</li>
-              <li>HTML5 & CSS3</li>
-              <li>Redux</li>
-              <li>Bootstrap</li>
-              <li>Responsive Design</li>
-            </ul>
-          </div>
-          
-          <div className="skill-category">
-            <h3>Backend</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>RESTful APIs</li>
-              <li>MongoDB</li>
-              <li>SQL</li>
-              <li>Firebase</li>
-            </ul>
-          </div>
-          
-          <div className="skill-category">
-            <h3>Digital Marketing</h3>
-            <ul>
-              <li>SEO <Link to="/blog/digital-marketing-strategies-2024" className="skill-link"><i className="fas fa-external-link-alt"></i></Link></li>
-              <li>Google Ads</li>
-              <li>Social Media Marketing</li>
-              <li>Content Strategy</li>
-              <li>Email Marketing</li>
-              <li>Analytics & Reporting</li>
-            </ul>
-          </div>
-          
-          <div className="skill-category">
-            <h3>Tools & Others</h3>
-            <ul>
-              <li>Git & GitHub</li>
-              <li>VS Code</li>
-              <li>Figma</li>
-              <li>Google Analytics</li>
-              <li>SEMrush</li>
-              <li>Mailchimp</li>
-            </ul>
+            <div className="skill-category">
+              <h3><i className="fas fa-code"></i> Frontend</h3>
+              <ul>
+                <li>React.js <a href="https://en.wikipedia.org/wiki/React_(JavaScript_library)" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>JavaScript (ES6+) <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>HTML5 & CSS3 <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Redux <a href="https://en.wikipedia.org/wiki/Redux_(JavaScript_library)" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Bootstrap <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Responsive Design <a href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+              </ul>
+            </div>
+            
+            <div className="skill-category">
+              <h3><i className="fas fa-server"></i> Backend</h3>
+              <ul>
+                <li>Node.js <a href="https://en.wikipedia.org/wiki/Node.js" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Express.js <a href="https://en.wikipedia.org/wiki/Express.js" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>RESTful APIs <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>MongoDB <a href="https://en.wikipedia.org/wiki/MongoDB" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>SQL <a href="https://en.wikipedia.org/wiki/SQL" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Firebase <a href="https://en.wikipedia.org/wiki/Firebase" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+              </ul>
+            </div>
+            
+            <div className="skill-category">
+              <h3><i className="fas fa-layer-group"></i> MERN Stack <a href="https://en.wikipedia.org/wiki/MEAN_(solution_stack)" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></h3>
+              <ul>
+                <li>Full-stack application development</li>
+                <li>MongoDB Atlas integration</li>
+                <li>Express middleware implementation</li>
+                <li>React component architecture</li>
+                <li>Node.js environment configuration</li>
+                <li>JWT Authentication <a href="https://en.wikipedia.org/wiki/JSON_Web_Token" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+              </ul>
+            </div>
+            
+            <div className="skill-category">
+              <h3><i className="fas fa-bullhorn"></i> Digital Marketing <a href="https://en.wikipedia.org/wiki/Digital_marketing" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></h3>
+              <ul>
+                <li>SEO <a href="https://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Google Ads <a href="https://en.wikipedia.org/wiki/Google_Ads" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Content Strategy <a href="https://en.wikipedia.org/wiki/Content_strategy" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Email Marketing <a href="https://en.wikipedia.org/wiki/Email_marketing" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Analytics & Reporting <a href="https://en.wikipedia.org/wiki/Web_analytics" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Conversion Optimization <a href="https://en.wikipedia.org/wiki/Conversion_rate_optimization" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+              </ul>
+            </div>
+            
+            <div className="skill-category">
+              <h3><i className="fas fa-hashtag"></i> Social Media Management <a href="https://en.wikipedia.org/wiki/Social_media_marketing" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></h3>
+              <ul>
+                <li>Platform strategy <a href="https://en.wikipedia.org/wiki/Social_media" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Content calendar planning</li>
+                <li>Community engagement</li>
+                <li>Paid social campaigns</li>
+                <li>Performance analytics</li>
+                <li>Influencer collaboration <a href="https://en.wikipedia.org/wiki/Influencer_marketing" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+              </ul>
+            </div>
+            
+            <div className="skill-category">
+              <h3><i className="fas fa-tools"></i> Tools & Others</h3>
+              <ul>
+                <li>Git & GitHub <a href="https://en.wikipedia.org/wiki/Git" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>VS Code <a href="https://en.wikipedia.org/wiki/Visual_Studio_Code" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Figma <a href="https://en.wikipedia.org/wiki/Figma_(software)" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Google Analytics <a href="https://en.wikipedia.org/wiki/Google_Analytics" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>SEMrush <a href="https://en.wikipedia.org/wiki/Semrush" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+                <li>Mailchimp <a href="https://en.wikipedia.org/wiki/Mailchimp" target="_blank" rel="noopener noreferrer" className="wiki-link"><i className="fas fa-info-circle"></i></a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
