@@ -5,9 +5,19 @@
   font-family: 'Poppins', sans-serif;
 }
 
+:root {
+  --primary-rgb: 0, 255, 170; /* Neon green/cyan */
+  --secondary-rgb: 255, 0, 128; /* Neon pink */
+  --accent-rgb: 0, 102, 255; /* Neon blue */
+  --background-dark: #0a0a0a;
+  --background-light: #121212;
+  --text-color: #ffffff;
+  --card-bg: rgba(20, 20, 20, 0.8);
+}
+
 body {
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: var(--background-dark);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
@@ -15,14 +25,29 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
 }
 
 .main-content {
   flex: 1;
+  position: relative;
+  z-index: 1; /* This is good - keep it lower than navbar */
 }
 
+/* Improved Text Visibility */
+p, h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  color: var(--text-color);
+}
+
+p {
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* RGB Button Styling with improved visibility */
 .btn {
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
@@ -30,49 +55,109 @@ body {
   text-decoration: none;
   display: inline-block;
   margin: 10px 5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 2px solid transparent;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+  transform-style: preserve-3d; /* 3D effect */
+  perspective: 1000px;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: linear-gradient(90deg, 
+    rgba(var(--primary-rgb), 1), 
+    rgba(var(--secondary-rgb), 1), 
+    rgba(var(--accent-rgb), 1), 
+    rgba(var(--primary-rgb), 1));
+  background-size: 400%;
+  border-radius: 5px;
+  animation: rgb-border 3s linear infinite;
 }
 
 .btn-primary {
-  background-color: #0d6efd;
-  color: white;
-  border: 2px solid #0d6efd;
-}
-
-.btn-primary:hover {
-  background-color: transparent;
-  color: #0d6efd;
+  background-color: rgba(var(--primary-rgb), 0.3);
+  color: rgb(var(--primary-rgb));
+  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.4);
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: #0d6efd;
-  border: 2px solid #0d6efd;
+  background-color: rgba(var(--secondary-rgb), 0.3);
+  color: rgb(var(--secondary-rgb));
+  box-shadow: 0 0 20px rgba(var(--secondary-rgb), 0.4);
 }
 
-.btn-secondary:hover {
-  background-color: #0d6efd;
-  color: white;
+.btn:hover {
+  transform: translateY(-3px) rotateX(5deg);
+  box-shadow: 0 0 25px rgba(var(--primary-rgb), 0.6);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 1rem;
-  font-weight: 700;
+@keyframes rgb-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-p {
-  margin-bottom: 1rem;
+/* RGB text effect */
+.rgb-text {
+  background: linear-gradient(90deg, 
+    rgb(var(--primary-rgb)), 
+    rgb(var(--secondary-rgb)), 
+    rgb(var(--accent-rgb)), 
+    rgb(var(--primary-rgb)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300%;
+  animation: rgb-text 3s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.8));
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+@keyframes rgb-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
+/* 3D Card Effect */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: rotateX(5deg) rotateY(5deg);
+}
+
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .btn {
-    padding: 8px 16px;
+    padding: 10px 20px;
     font-size: 0.9rem;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
   }
 }

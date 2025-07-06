@@ -8,10 +8,11 @@
   text-align: center;
   margin-bottom: 40px;
   font-size: 2.5rem;
-  color: #0d6efd;
+  color: rgb(var(--primary-rgb));
   position: relative;
   display: inline-block;
   padding-bottom: 10px;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
 .about-container h1::after {
@@ -22,7 +23,10 @@
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: linear-gradient(to right, transparent, #0d6efd, transparent);
+  background: linear-gradient(to right, 
+    rgba(var(--primary-rgb), 0.3), 
+    rgba(var(--primary-rgb), 1), 
+    rgba(var(--primary-rgb), 0.3));
   border-radius: 3px;
 }
 
@@ -42,56 +46,138 @@
   margin: 0 auto;
 }
 
+/* Enhanced 3D effect for profile image */
 .profile-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #0d6efd;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  border: 4px solid rgb(var(--primary-rgb));
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(var(--primary-rgb), 0.3);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .profile-image:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) translateZ(20px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 30px rgba(var(--primary-rgb), 0.5);
+}
+
+/* Enhanced 3D effect for expertise areas */
+.expertise-area {
+  background-color: rgba(20, 20, 20, 0.7);
+  padding: 30px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(var(--primary-rgb), 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.expertise-area:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(2deg);
+  box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.2);
+}
+
+/* Improved responsive design for about page */
+@media screen and (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .about-image {
+    margin-bottom: 30px;
+  }
+  
+  .section-header::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    padding: 30px 15px;
+  }
+  
+  .about-image {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .expertise-areas {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
+  
+  .about-text .lead {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-image {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .expertise-area {
+    padding: 20px 15px;
+  }
 }
 
 .about-text {
   flex: 1;
+  background-color: rgba(20, 20, 20, 0.7);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(var(--primary-rgb), 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .about-text p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 20px;
-  color: var(--text-color, #555);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 body.dark-theme .about-text p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .about-text .lead {
   font-size: 1.4rem;
   line-height: 1.6;
   font-weight: 500;
-  color: #0d6efd;
-  border-left: 3px solid #0d6efd;
+  color: rgb(var(--secondary-rgb));
+  border-left: 3px solid rgb(var(--secondary-rgb));
   padding-left: 15px;
   margin-bottom: 25px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .section-header {
   font-size: 1.8rem;
   margin: 40px 0 25px;
-  color: var(--heading-color, #333);
+  color: rgb(var(--primary-rgb));
   padding-bottom: 10px;
   position: relative;
   display: inline-block;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
 body.dark-theme .section-header {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgb(var(--primary-rgb));
 }
 
 .section-header::after {
@@ -99,463 +185,227 @@ body.dark-theme .section-header {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 60px;
+  width: 50px;
   height: 3px;
-  background: #0d6efd;
+  background: linear-gradient(to right, 
+    rgba(var(--secondary-rgb), 1), 
+    rgba(var(--accent-rgb), 1));
   border-radius: 3px;
+}
+
+/* Update expertise section for better visibility */
+.expertise-section {
+  margin-top: 60px;
 }
 
 .expertise-areas {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin-bottom: 50px;
 }
 
 .expertise-area {
-  background-color: white;
+  background-color: rgba(20, 20, 20, 0.7);
   padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(var(--primary-rgb), 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-}
-
-body.dark-theme .expertise-area {
-  background-color: #2d2d2d;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.expertise-area::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(to right, #0d6efd, transparent);
+  transform-style: preserve-3d; /* 3D effect */
 }
 
 .expertise-area:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.2);
 }
 
 .expertise-area h3 {
-  font-size: 1.3rem;
-  color: #0d6efd;
+  font-size: 1.5rem;
   margin-bottom: 20px;
+  color: rgb(var(--secondary-rgb));
   display: flex;
   align-items: center;
+  gap: 10px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .expertise-area h3 i {
-  margin-right: 10px;
-  font-size: 1.5rem;
+  color: rgb(var(--primary-rgb));
+}
+
+.expertise-area p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .expertise-area ul {
-  margin-top: 15px;
+  margin-bottom: 25px;
   padding-left: 20px;
 }
 
-.expertise-area li {
+.expertise-area ul li {
   margin-bottom: 10px;
-  position: relative;
-  padding-left: 10px;
-  color: var(--text-color, #555);
-}
-
-body.dark-theme .expertise-area li {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.expertise-area li::before {
-  content: '•';
-  color: #0d6efd;
-  position: absolute;
-  left: -10px;
-  top: 0;
-  font-size: 1.2rem;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  margin-bottom: 50px;
-}
-
-.skill-category {
-  background-color: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-
-body.dark-theme .skill-category {
-  background-color: #2d2d2d;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-}
-
-.skill-category h3 {
-  font-size: 1.2rem;
-  color: #0d6efd;
-  margin-bottom: 20px;
-  text-align: center;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e9ecef;
-  position: relative;
-}
-
-body.dark-theme .skill-category h3 {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.skill-category h3::after {
-  content: '';
-  position: absolute;
-  width: 40px;
-  height: 3px;
-  background: #0d6efd;
-  bottom: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 3px;
-}
-
-.skill-category ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.skill-category li {
-  padding: 8px 0;
-  font-size: 0.95rem;
-  color: var(--text-color, #555);
-  transition: all 0.2s ease;
-}
-
-body.dark-theme .skill-category li {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.skill-category li:hover {
-  color: #0d6efd;
-  transform: translateX(5px);
-}
-
-.interests-list {
-  list-style-type: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 15px;
-  margin-bottom: 50px;
-}
-
-.interests-list li {
-  margin-bottom: 0;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  background: white;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-body.dark-theme .interests-list li {
-  background-color: #2d2d2d;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.interests-list li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.interests-list i {
-  color: #0d6efd;
-  margin-right: 15px;
-  font-size: 1.4rem;
-  background: rgba(13, 110, 253, 0.1);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-body.dark-theme .interests-list i {
-  background: rgba(13, 110, 253, 0.25);
-}
-
-.languages-list {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.languages-list li {
-  background-color: #0d6efd;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.25);
-}
-
-.languages-list li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.35);
-  background-color: #0b5ed7;
-}
-
-/* Tablet Responsiveness */
-@media screen and (max-width: 992px) {
-  .expertise-areas {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .interests-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Smaller Tablet & Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-  .about-container {
-    padding: 30px 15px;
-  }
-  
-  .about-container h1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-  
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-  
-  .about-image {
-    width: 220px;
-    height: 220px;
-  }
-
-  .profile-image {
-    width: 220px;
-    height: 220px;
-  }
-  
-  .about-text p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  .about-text .lead {
-    font-size: 1.2rem;
-    padding-left: 12px;
-  }
-
-  .section-header {
-    font-size: 1.5rem;
-    margin: 30px 0 20px;
-  }
-  
-  .expertise-area {
-    padding: 20px;
-  }
-  
-  .expertise-area h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-  }
-  
-  .interests-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Mobile Responsiveness */
-@media screen and (max-width: 480px) {
-  .about-container {
-    padding: 20px 10px;
-  }
-  
-  .about-container h1 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-  }
-  
-  .about-content {
-    gap: 25px;
-  }
-  
-  .about-image {
-    width: 180px;
-    height: 180px;
-  }
-  
-  .profile-image {
-    width: 180px;
-    height: 180px;
-  }
-  
-  .about-text p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
-  }
-  
-  .about-text .lead {
-    font-size: 1.1rem;
-    padding-left: 10px;
-    border-left-width: 2px;
-  }
-  
-  .section-header {
-    font-size: 1.3rem;
-    margin: 25px 0 15px;
-  }
-  
-  .expertise-area {
-    padding: 15px;
-  }
-  
-  .expertise-area h3 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-  }
-  
-  .expertise-area h3 i {
-    font-size: 1.3rem;
-  }
-  
-  .expertise-area li {
-    font-size: 0.9rem;
-  }
-  
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  
-  .skill-category {
-    padding: 15px;
-  }
-  
-  .skill-category h3 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-  }
-  
-  .skill-category li {
-    padding: 6px 0;
-    font-size: 0.9rem;
-  }
-  
-  .interests-list li {
-    padding: 12px;
-  }
-  
-  .interests-list i {
-    width: 35px;
-    height: 35px;
-    font-size: 1.2rem;
-    margin-right: 10px;
-  }
-  
-  .languages-list {
-    gap: 10px;
-  }
-  
-  .languages-list li {
-    padding: 8px 15px;
-    font-size: 0.85rem;
-  }
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .read-more-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--primary-color);
+  gap: 8px;
+  color: rgb(var(--primary-rgb));
   text-decoration: none;
   font-weight: 500;
-  margin-top: 1rem;
   transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .read-more-link:hover {
-  color: var(--secondary-color);
-  gap: 0.8rem;
+  color: rgb(var(--secondary-rgb));
+  gap: 12px;
 }
 
-.read-more-link i {
-  font-size: 0.9rem;
-  transition: transform 0.3s ease;
+/* Add these styles to properly align and arrange the technical skills */
+.skills-section {
+  margin-top: 60px;
 }
 
-.read-more-link:hover i {
-  transform: translateX(3px);
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
 }
 
-.skill-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  margin-left: 0.5rem;
-  opacity: 0.7;
+.skill-category {
+  background-color: rgba(20, 20, 20, 0.7);
+  padding: 25px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(var(--primary-rgb), 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.skill-category:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(2deg);
+  box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.2);
+  border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+.skill-category h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: rgb(var(--secondary-rgb));
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.skill-category h3 i {
+  color: rgb(var(--primary-rgb));
+  font-size: 1.5rem;
   transition: all 0.3s ease;
 }
 
+.skill-category:hover h3 i {
+  transform: translateZ(15px) scale(1.2);
+}
+
+.skill-category ul {
+  list-style: none;
+  padding-left: 5px;
+}
+
+.skill-category ul li {
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  position: relative;
+  padding-left: 20px;
+  transition: all 0.3s ease;
+}
+
+.skill-category ul li:before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: rgb(var(--primary-rgb));
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover ul li:before {
+  color: rgb(var(--secondary-rgb));
+}
+
+/* Add this at the end of your About.css file */
+.wiki-link {
+  margin-left: 8px;
+  color: rgba(var(--primary-rgb), 0.8);
+  transition: all 0.3s ease;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.wiki-link i {
+  font-size: 0.85em;
+  filter: drop-shadow(0 0 5px rgba(var(--primary-rgb), 0.5));
+}
+
+.wiki-link:hover {
+  color: rgba(var(--secondary-rgb), 1);
+  transform: translateZ(5px) scale(1.2);
+  filter: drop-shadow(0 0 8px rgba(var(--primary-rgb), 0.8));
+}
+
+.wiki-link:hover i {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .skill-link:hover {
-  opacity: 1;
-  color: var(--secondary-color);
+  color: rgb(var(--secondary-rgb));
 }
 
-.skill-link i {
-  font-size: 0.8rem;
+/* Responsive adjustments for skills grid */
+@media screen and (max-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Dark mode adjustments */
-[data-theme='dark'] .read-more-link {
-  color: var(--secondary-color);
-}
-
-[data-theme='dark'] .read-more-link:hover {
-  color: var(--primary-color);
-}
-
-[data-theme='dark'] .skill-link {
-  color: var(--secondary-color);
-}
-
-[data-theme='dark'] .skill-link:hover {
-  color: var(--primary-color);
+@media screen and (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .skill-category {
+    padding: 20px;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.2rem;
+  }
 }

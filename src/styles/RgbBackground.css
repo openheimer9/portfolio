@@ -1,0 +1,168 @@
+.rgb-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--background-dark);
+  overflow: hidden;
+}
+
+/* RGB Floating Elements - no blur for sharp elements */
+/* Enhanced 3D effect for RGB elements */
+.rgb-element {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(0px); /* Removed blur for sharper elements */
+  opacity: 0.4;
+  animation: float 15s infinite linear;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.rgb-element:nth-child(odd):hover {
+  transform: translateZ(30px) scale(1.1);
+}
+
+.rgb-element:nth-child(even):hover {
+  transform: translateZ(20px) scale(1.05);
+}
+
+/* Enhanced 3D effect for RGB lines */
+.rgb-line {
+  position: absolute;
+  height: 3px; /* Increased thickness */
+  background: linear-gradient(90deg, 
+    rgba(var(--primary-rgb), 0) 0%, 
+    rgba(var(--primary-rgb), 0.8) 50%, 
+    rgba(var(--primary-rgb), 0) 100%);
+  animation: line-move 8s infinite linear;
+  opacity: 0.7; /* Increased opacity */
+  transform-style: preserve-3d;
+}
+
+/* Improved responsive adjustments */
+@media screen and (max-width: 992px) {
+  .rgb-element {
+    opacity: 0.35;
+  }
+  
+  .rgb-line {
+    opacity: 0.4;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rgb-element {
+    opacity: 0.3;
+  }
+  
+  .rgb-line {
+    opacity: 0.3;
+    height: 2px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .rgb-element {
+    opacity: 0.25;
+  }
+  
+  .rgb-line {
+    opacity: 0.25;
+  }
+}
+
+.rgb-line:nth-child(9) {
+  width: 30%;
+  top: 30%;
+  left: -30%;
+  animation-duration: 10s;
+}
+
+.rgb-line:nth-child(10) {
+  width: 40%;
+  top: 50%;
+  left: -40%;
+  background: linear-gradient(90deg, 
+    rgba(var(--secondary-rgb), 0) 0%, 
+    rgba(var(--secondary-rgb), 0.8) 50%, 
+    rgba(var(--secondary-rgb), 0) 100%);
+  animation-duration: 12s;
+  animation-delay: -4s;
+}
+
+.rgb-line:nth-child(11) {
+  width: 35%;
+  top: 70%;
+  left: -35%;
+  background: linear-gradient(90deg, 
+    rgba(var(--accent-rgb), 0) 0%, 
+    rgba(var(--accent-rgb), 0.8) 50%, 
+    rgba(var(--accent-rgb), 0) 100%);
+  animation-duration: 9s;
+  animation-delay: -2s;
+}
+
+.rgb-line:nth-child(12) {
+  width: 25%;
+  top: 15%;
+  left: -25%;
+  background: linear-gradient(90deg, 
+    rgba(var(--primary-rgb), 0) 0%, 
+    rgba(var(--primary-rgb), 0.8) 50%, 
+    rgba(var(--primary-rgb), 0) 100%);
+  animation-duration: 11s;
+  animation-delay: -6s;
+}
+
+.rgb-line:nth-child(13) {
+  width: 45%;
+  top: 85%;
+  left: -45%;
+  background: linear-gradient(90deg, 
+    rgba(var(--secondary-rgb), 0) 0%, 
+    rgba(var(--secondary-rgb), 0.8) 50%, 
+    rgba(var(--secondary-rgb), 0) 100%);
+  animation-duration: 13s;
+  animation-delay: -8s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(100px, 50px) rotate(90deg);
+  }
+  50% {
+    transform: translate(200px, 0) rotate(180deg);
+  }
+  75% {
+    transform: translate(100px, -50px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes line-move {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .rgb-element {
+    opacity: 0.3; /* Reduce opacity on mobile for better readability */
+  }
+  
+  .rgb-line {
+    opacity: 0.3;
+  }
+}
