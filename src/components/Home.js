@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="hero-section fade-in">
-        <h1 className="hero-name">Bhagirath N. Devani</h1>
+        {/* <h1 className="hero-name">Bhagirath N. Devani</h1> */}
         <h2 className="hero-title">React Developer & Digital Marketing Strategist</h2>
         <p className="expanded-tagline">
           Crafting seamless user experiences through React development and driving measurable growth with data-driven digital marketing solutions.

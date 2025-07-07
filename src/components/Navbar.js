@@ -1,25 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef();
+  const buttonRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && 
+          menuRef.current && 
+          !menuRef.current.contains(event.target) &&
+          !buttonRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const toggleMenu = () => {
-    console.log('Toggle menu clicked, current state:', isOpen);
     setIsOpen(!isOpen);
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo in center */}
         <Link to="/" className="navbar-logo">
           <span className="logo-first">Bhagirath</span>&nbsp;<span className="logo-last">Devani</span>
         </Link>
 
-        {/* Menu icon */}
-        <div className="menu-icon" onClick={toggleMenu}>
+        <div className="menu-icon" ref={buttonRef} onClick={toggleMenu}>
           {isOpen ? (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
               <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
@@ -31,8 +46,7 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Nav links */}
-        <ul className={isOpen ? 'nav-menu active' : 'nav-menu'}>
+        <ul className={isOpen ? 'nav-menu active' : 'nav-menu'} ref={menuRef}>
           <li className="nav-item">
             <Link to="/" className="nav-links" onClick={toggleMenu}>Home</Link>
           </li>
