@@ -46,25 +46,38 @@ p {
 }
 
 /* RGB Button Styling with improved visibility */
+/* Simple button base styles */
 .btn {
-  padding: 12px 24px;
-  border-radius: 5px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  margin: 10px 5px;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  border: 2px solid transparent;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  letter-spacing: 1px;
-  transform-style: preserve-3d; /* 3D effect */
-  perspective: 1000px;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 5px;
 }
 
+.btn-primary {
+    background-color: rgb(var(--primary-rgb));
+    color: white;
+}
+
+.btn-secondary {
+    background-color: rgb(var(--secondary-rgb));
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+/* Remove these blocks 
+.btn::before { ... }
+.btn-primary { ... } /* the one with box-shadow 
+.btn-secondary { ... } /* the one with box-shadow */
+ */
 .btn::before {
   content: '';
   position: absolute;
@@ -87,14 +100,13 @@ p {
   background-color: rgba(var(--primary-rgb), 0.3);
   color: rgb(var(--primary-rgb));
   box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.4);
-}
+} 
 
 .btn-secondary {
   background-color: rgba(var(--secondary-rgb), 0.3);
   color: rgb(var(--secondary-rgb));
   box-shadow: 0 0 20px rgba(var(--secondary-rgb), 0.4);
-}
-
+} 
 .btn:hover {
   transform: translateY(-3px) rotateX(5deg);
   box-shadow: 0 0 25px rgba(var(--primary-rgb), 0.6);

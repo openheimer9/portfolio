@@ -42,8 +42,40 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
+}
+
+@media screen and (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .projects-container {
+        padding: 30px 15px;
+    }
+
+    .project-card {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-grid {
+        gap: 25px;
+    }
+
+    .project-card {
+        border-radius: 12px;
+    }
 }
 
 /* Enhanced 3D effect for project cards */

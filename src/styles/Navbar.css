@@ -2,6 +2,9 @@
   --primary-rgb: 255, 0, 255;
   --secondary-rgb: 0, 255, 255;
   --accent-rgb: 0, 255, 0;
+  --primary-opacity: 0.7; /* Added for consistent lower contrast */
+  --secondary-opacity: 0.6; /* Added for consistent lower contrast */
+  --shadow-opacity: 0.3; /* Added for reduced shadow contrast */
 }
 
 @keyframes rgb-border {
@@ -22,7 +25,7 @@
   isolation: isolate; /* Create a new stacking context */
 }
 
-/* Add RGB border effect to navbar */
+/* Add RGB border effect to navbar 
 .navbar::before {
   content: '';
   position: absolute;
@@ -40,7 +43,7 @@
   z-index: 1;
   transform: translateZ(5px);
 }
-
+*/
 .navbar::after {
   content: '';
   position: absolute;
@@ -58,6 +61,7 @@
 }
 
 /* Enhanced 3D effect for navbar logo */
+/* Simplified navbar logo styles */
 .navbar-logo {
   color: #fff;
   cursor: pointer;
@@ -65,29 +69,58 @@
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  font-weight: 800;
-  transition: all 0.3s ease;
+  font-weight: 600;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  text-shadow: 0 0 15px rgba(var(--primary-rgb), 0.7);
+}
+
+.logo-first {
+  color: #98FF98;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.logo-last {
+  color: #00ffff;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .navbar-logo {
+    font-size: 1.8rem;
+  }
+  
+  .nav-links {
+    font-size: 1.4rem;
+  }
+  
+  .menu-icon {
+    font-size: 2rem;
+  }
+
+  text-shadow : 0 0 10px rgba(var(--primary-rgb), var(--shadow-opacity)); /* Reduced shadow intensity */
   transform-style: preserve-3d;
 }
 
 .logo-first {
-  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  background: #98FF98; /* Reduced color intensity */
   -webkit-background-clip: text;
+  font-size: 3rem;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.5));
+  filter: drop-shadow(0 0 8px rgba(255, 0, 255, var(--shadow-opacity))); /* Reduced shadow */
 }
 
 .logo-last {
-  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  background: #98FF98; /* Reduced color intensity */
   -webkit-background-clip: text;
+  font-size: 3rem;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, var(--shadow-opacity))); /* Reduced shadow */
 }
 
 .navbar-logo:hover {
@@ -130,7 +163,7 @@
 
 .menu-icon {
   display: block;
-  color: rgb(var(--primary-rgb));
+  color: rgba(var(--primary-rgb), var(--primary-opacity)); /* Reduced opacity */
   font-size: 1.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -141,13 +174,13 @@
 }
 
 .menu-icon i {
-  filter: drop-shadow(0 0 10px rgba(var(--primary-rgb), 0.7));
+  filter: drop-shadow(0 0 8px rgba(var(--primary-rgb), var(--shadow-opacity))); /* Reduced shadow */
 }
 
 .menu-icon:hover {
-  color: rgb(var(--secondary-rgb));
+  color: rgba(var(--secondary-rgb), var(--primary-opacity)); /* Reduced opacity */
   transform: translateZ(5px) scale(1.1);
-  text-shadow: 0 0 15px rgba(var(--primary-rgb), 0.7);
+  text-shadow: 0 0 10px rgba(var(--primary-rgb), var(--shadow-opacity)); /* Reduced shadow */
 }
 
 .nav-menu {
@@ -164,7 +197,7 @@
   background: linear-gradient(135deg, rgba(18, 18, 18, 0.95), rgba(30, 30, 30, 0.95));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 3px solid rgba(var(--primary-rgb), 0.5); /* Changed from border-top to all borders */
+  border: 3px solid rgba(var(--primary-rgb), var(--secondary-opacity)); /* Reduced border opacity */
   border-radius: 10px; /* Added rounded corners */
   z-index: 9999;
   overflow-y: auto; /* Added scrolling for smaller height */
@@ -200,7 +233,15 @@
 /* Responsive design */
 @media screen and (max-width: 960px) {
   .navbar-logo {
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Increased from 1.3rem */
+  }
+  
+  .nav-links {
+    font-size: 1.4rem; /* Increased from 1.2rem */
+  }
+  
+  .menu-icon {
+    font-size: 2rem; /* Increased from 1.8rem */
   }
 }
 
