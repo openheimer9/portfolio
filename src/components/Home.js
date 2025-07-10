@@ -7,9 +7,11 @@ const Home = () => {
     <div className="home-container">
       <div className="hero-section fade-in">
         {/* <h1 className="hero-name">Bhagirath N. Devani</h1> */}
-        <h2 className="hero-title">React Developer & Digital Marketing Strategist</h2>
+        <h2 className="hero-title">Full Stack Developer</h2>
         <p className="expanded-tagline">
-          Crafting seamless user experiences through React development and driving measurable growth with data-driven digital marketing solutions.
+        Bringing ideas to life, one line of code at a time.
+        I build what you imagine — sleek, smart, and scalable.
+        Let’s create something worth remembering.
         </p>
         <div className="brief-intro">
           <p>

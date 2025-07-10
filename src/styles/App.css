@@ -6,9 +6,9 @@
 }
 
 :root {
-  --primary-rgb: 0, 255, 170; /* Neon green/cyan */
-  --secondary-rgb: 255, 0, 128; /* Neon pink */
-  --accent-rgb: 0, 102, 255; /* Neon blue */
+  --primary-rgb: 30, 144, 255; /* Dodger Blue - main color */
+  --secondary-rgb: 70, 130, 180; /* Steel Blue - secondary blue */
+  --accent-rgb: 138, 43, 226; /* Purple - subtle accent */
   --background-dark: #0a0a0a;
   --background-light: #121212;
   --text-color: #ffffff;
@@ -77,7 +77,7 @@ p {
 .btn::before { ... }
 .btn-primary { ... } /* the one with box-shadow 
 .btn-secondary { ... } /* the one with box-shadow */
- */
+ 
 .btn::before {
   content: '';
   position: absolute;

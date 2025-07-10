@@ -1,10 +1,24 @@
 :root {
-  --primary-rgb: 255, 0, 255;
-  --secondary-rgb: 0, 255, 255;
-  --accent-rgb: 0, 255, 0;
+  --primary-rgb: 30, 144, 255; /* Dodger Blue - main color */
+  --secondary-rgb: 70, 130, 180; /* Steel Blue - secondary blue */
+  --accent-rgb: 138, 43, 226; /* Purple - subtle accent */
   --primary-opacity: 0.7; /* Added for consistent lower contrast */
   --secondary-opacity: 0.6; /* Added for consistent lower contrast */
   --shadow-opacity: 0.3; /* Added for reduced shadow contrast */
+}
+
+/* Remove these duplicate logo color definitions as they conflict with the ones below */
+/* Update logo colors */
+.logo-first {
+  color: #1e90ff; /* Dodger Blue */
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.logo-last {
+  color: #2b9ce2; 
+  background: none;
+  -webkit-text-fill-color: initial;
 }
 
 @keyframes rgb-border {
@@ -63,7 +77,7 @@
 /* Enhanced 3D effect for navbar logo */
 /* Simplified navbar logo styles */
 .navbar-logo {
-  color: #fff;
+  color: #00FFFF;
   cursor: pointer;
   text-decoration: none;
   font-size: 1.5rem;
@@ -76,7 +90,7 @@
 }
 
 .logo-first {
-  color: #98FF98;
+  color: #00FFFF;
   background: none;
   -webkit-text-fill-color: initial;
 }
@@ -91,6 +105,8 @@
 @media screen and (max-width: 768px) {
   .navbar-logo {
     font-size: 1.8rem;
+    text-shadow : 0 0 10px rgba(var(--primary-rgb), var(--shadow-opacity)); /* Reduced shadow intensity */
+    transform-style : preserve-3d;
   }
   
   .nav-links {
@@ -101,21 +117,20 @@
     font-size: 2rem;
   }
 
-  text-shadow : 0 0 10px rgba(var(--primary-rgb), var(--shadow-opacity)); /* Reduced shadow intensity */
-  transform-style: preserve-3d;
+  
 }
 
 .logo-first {
-  background: #98FF98; /* Reduced color intensity */
+  background:rgb(34, 147, 223); /* Reduced color intensity */
   -webkit-background-clip: text;
   font-size: 3rem;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 8px rgba(255, 0, 255, var(--shadow-opacity))); /* Reduced shadow */
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, var(--shadow-opacity))); /* Reduced shadow */
 }
 
 .logo-last {
-  background: #98FF98; /* Reduced color intensity */
+  background: rgb(34, 147, 223); /* Reduced color intensity */
   -webkit-background-clip: text;
   font-size: 3rem;
   background-clip: text;

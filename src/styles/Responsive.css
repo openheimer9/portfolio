@@ -305,6 +305,48 @@ body.dark-theme .timeline-item::before {
     font-size: 1rem;
   }
   
+  /* Add these media queries at the end of the file */
+  @media screen and (max-width: 480px) {
+    /* Increase font sizes for mobile */
+    .navbar-logo {
+      font-size: 1.8rem;
+    }
+    
+    .hero-section h1 {
+      font-size: 2.8rem;
+    }
+    
+    .hero-section h2 {
+      font-size: 1.8rem;
+    }
+    
+    .expanded-tagline {
+      font-size: 1.2rem;
+    }
+    
+    /* Larger buttons for mobile */
+    .btn, button, input[type="submit"] {
+      padding: 12px 24px;
+      font-size: 1.1rem;
+    }
+    
+    /* Ensure buttons are properly sized and spaced */
+    .cta-buttons .btn {
+      min-width: 150px;
+      margin: 0 8px;
+    }
+    
+    /* Larger skill card icons */
+    .skill-card i {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+    
+    .skill-card h3 {
+      font-size: 1.2rem;
+    }
+  }
+  
   .projects-container h1,
   .about-container h1,
   .contact-container h1 {
@@ -368,4 +410,4 @@ body.dark-theme .timeline-item::before {
   .contact-container {
     max-width: 1400px;
   }
-} 
+}
