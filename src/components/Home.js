@@ -13,7 +13,7 @@ const Home = () => {
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(el => {
       el.style.animation = 'none';
-      el.offsetHeight; // Trigger reflow
+      void el.offsetHeight; // Trigger reflow
       el.style.animation = null;
     });
   }, []);
