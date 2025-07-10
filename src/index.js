@@ -13,23 +13,4 @@ root.render(
   </React.StrictMode>
 );
 
-// Add scroll animation functionality
-window.addEventListener('load', () => {
-  const animatedElements = document.querySelectorAll('.scroll-animation');
-  
-  const checkScroll = () => {
-    animatedElements.forEach(element => {
-      const elementPosition = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      
-      if (elementPosition < windowHeight - 100) {
-        element.classList.add('active');
-      }
-    });
-  };
-  
-  window.addEventListener('scroll', checkScroll);
-  checkScroll(); // Check on initial load
-});
-
 reportWebVitals();

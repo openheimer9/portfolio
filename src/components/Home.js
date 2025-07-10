@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
+import useScrollAnimation from '../utils/useScrollAnimation';
 
 const Home = () => {
+  // Use the custom hook
+  useScrollAnimation();
+  
+  // Add this effect to handle fade-in animations
+  useEffect(() => {
+    // Force a repaint to trigger fade-in animations
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach(el => {
+      el.style.animation = 'none';
+      el.offsetHeight; // Trigger reflow
+      el.style.animation = null;
+    });
+  }, []);
+
   return (
     <div className="home-container">
       <div className="hero-section fade-in">
